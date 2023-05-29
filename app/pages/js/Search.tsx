@@ -8,6 +8,9 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import { IoIosCloseCircle } from 'react-icons/io'
+import car from "../images/6.jpg"
+import Image from "next/image"
+import Pagination from '@mui/material/Pagination';
 
 var makes = [
   {
@@ -20,7 +23,7 @@ var makes = [
     name: 'Mers'
   }
 ]
-export default function Search () {
+export default function Search() {
   const [Make, setMake] = React.useState('')
   const [model, setModel] = React.useState('')
   const [Distance, setDistance] = React.useState('')
@@ -369,7 +372,138 @@ export default function Search () {
         </div>
       </div>
       <div className='search_body'>
-       
+        <div className="body_top">
+          <h2>100 Results</h2>
+          <div className="top_box">
+            <p>Sort by:</p>
+            <Box className="inpsearch3">
+              <FormControl className='inpsearch inpsearch3'>
+                <InputLabel id='demo-simple-select-label'>Make</InputLabel>
+                <Select
+                  labelId='demo-simple-select-label'
+                  id='demo-simple-select'
+                  value={Make}
+                  label='Make'
+                  onChange={makeSearch}
+                >
+                  {makes.map(item => {
+                    return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  })}
+                </Select>
+              </FormControl>
+            </Box>
+
+          </div>
+        </div>
+        <div className="result_wrapper">
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+          <div className='feat_card'>
+            <Image src={car} alt='a' className='featured_img' />
+            <div className='featCard_bottom'>
+              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
+              <h4 className='featCard_price'>$4000</h4>
+              <div className='featCard_box'>
+                <p className='featCard_year'>2021</p>
+                <p className='featCard_auto'>Automatic</p>
+                <p className='featCard_pet'>Petrol</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <Pagination count={10} color="secondary" />
       </div>
     </div>
   )
