@@ -5,6 +5,7 @@ import Image from "next/image";
 import office from "../images/office.jpg";
 import us from "../images/us.png";
 import gr from "../images/gr.jpg";
+import Team from "./Team";
 
 export default function About() {
   return (
@@ -57,6 +58,7 @@ export default function About() {
             <button className="center_btn">Contact Us</button>
         </div>
       </div>
+      <Team />
     </div>
   );
 }
