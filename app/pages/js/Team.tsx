@@ -15,29 +15,40 @@ export default function Team() {
     <div className="team">
       <div className="team_left">
         <h1>Our Team</h1>
-        <div className="team_box">
-          <BsCheckCircleFill />
-          <p>Praesent nibh luctus viverra</p>
-        </div>
-        <div className="team_box">
-          <BsCheckCircleFill />
-          <p>Adipsing elit</p>
-        </div>
-        <div className="team_box">
-          <BsCheckCircleFill />
-          <p>Praesent nibh luctus viverra</p>
-        </div>
-        <div className="team_box">
-          <BsCheckCircleFill />
-          <p>Praesent nibh luctus viverra</p>
-        </div>
-        <div className="team_box">
-          <BsCheckCircleFill />
-          <p>Lorem, ipsum.</p>
+        <div className="left_body">
+          <div className="left_box2">
+            <div className="team_box">
+              <BsCheckCircleFill />
+              <p>Praesent nibh luctus viverra</p>
+            </div>
+            <div className="team_box">
+              <BsCheckCircleFill />
+              <p>Adipsing elit</p>
+            </div>
+            <div className="team_box">
+              <BsCheckCircleFill />
+              <p>Praesent nibh luctus viverra</p>
+            </div>
+          </div>
+          <div className="left_box1">
+            <div className="team_box">
+              <BsCheckCircleFill />
+              <p>Praesent nibh luctus viverra</p>
+            </div>
+            <div className="team_box">
+              <BsCheckCircleFill />
+              <p>Lorem, ipsum.</p>
+            </div>
+          </div>
         </div>
         <button className="team_btn">Learn More</button>
       </div>
-      <Swiper slidesPerView={3} spaceBetween={30} className="mySwiper">
+      <Swiper
+        slidesPerView={3}
+        spaceBetween={30}
+        loop={true}
+        className="mySwiper"
+      >
         <SwiperSlide className="team_card">
           <Image src={cardimg} alt="" />
           <div className="Tcard_box">
@@ -84,34 +95,34 @@ export default function Team() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="team_card">
-            <Image src={cardimg} alt="" />
-            <div className="Tcard_box">
-              <div className="tel_box"></div>
-              <div className="email_box"></div>
-              <h2>George Brown</h2>
-              <p>Customer Advisor</p>
-              <a className="Tcard_email" href="#!">
-                george@vehica.com
-              </a>
-              <a className="Tcard_tel" href="tel: +998931513776">
-                (123) 345-6789
-              </a>
+          <Image src={cardimg} alt="" />
+          <div className="Tcard_box">
+            <div className="tel_box"></div>
+            <div className="email_box"></div>
+            <h2>George Brown</h2>
+            <p>Customer Advisor</p>
+            <a className="Tcard_email" href="#!">
+              george@vehica.com
+            </a>
+            <a className="Tcard_tel" href="tel: +998931513776">
+              (123) 345-6789
+            </a>
           </div>
         </SwiperSlide>
 
         <SwiperSlide className="team_card">
-            <Image src={cardimg} alt="" />
-            <div className="Tcard_box">
-              <div className="tel_box"></div>
-              <div className="email_box"></div>
-              <h2>George Brown</h2>
-              <p>Customer Advisor</p>
-              <a className="Tcard_email" href="#!">
-                george@vehica.com
-              </a>
-              <a className="Tcard_tel" href="tel: +998931513776">
-                (123) 345-6789
-              </a>
+          <Image src={cardimg} alt="" />
+          <div className="Tcard_box">
+            <div className="tel_box"></div>
+            <div className="email_box"></div>
+            <h2>George Brown</h2>
+            <p>Customer Advisor</p>
+            <a className="Tcard_email" href="#!">
+              george@vehica.com
+            </a>
+            <a className="Tcard_tel" href="tel: +998931513776">
+              (123) 345-6789
+            </a>
           </div>
         </SwiperSlide>
       </Swiper>

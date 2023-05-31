@@ -104,11 +104,80 @@
   margin-top: 10px;
   font-size: 16px;
 }
+.about_images {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+.image_left {
+  width: 49%;
+}
+.about_img1 {
+  width: 100%;
+  height: 18vw;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-top: 20px;
+}
+.img_box {
+  width: 100%;
+  height: 18vw;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.about_img2 {
+  width: 48.5%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.image_right {
+  width: 49%;
+}
+.question {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #f2f5fb;
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 5%;
+  border-radius: 20px;
+}
+.question_body {
+  width: 70%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.question_left {
+  width: 49%;
+}
+.question_right {
+  width: 49%;
+}
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+  margin-top: 15px !important;
+}
+.question_btn {
+  width: 180px;
+  height: 50px;
+  font-size: 16px;
+  margin-top: 50px;
+}
 
 @media (max-width: 1480px) {
   .about,
   .seo {
     padding: 0 2%;
+  }
+  .about_images,
+  .question {
+    width: 96%;
   }
   .left_box p {
     font-size: 16px;
@@ -188,6 +257,29 @@
   }
   .aboutImage {
     height: 300px;
+  }
+  .about_images {
+    flex-direction: column;
+  }
+  .image_left,
+  .image_right,
+  .img_box,
+  .about_img1 {
+    width: 100%;
+  }
+  .img_box {
+    height: 150px;
+  }
+  .about_img1 {
+    height: 200px;
+  }
+  .question_body {
+    width: 90%;
+    flex-direction: column;
+  }
+  .question_left,
+  .question_right {
+    width: 100%;
   }
 }
 @media (max-width: 700px) {

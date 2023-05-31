@@ -48,7 +48,7 @@
   overflow: hidden;
   box-shadow: 0 0 10px #fff !important;
   background-color: #fff;
-  transition: .2s;
+  transition: 0.2s;
 }
 .Tcard_box {
   color: #2c2c2c;
@@ -80,7 +80,7 @@
 }
 .team_card:hover {
   transform: translateY(-15px) !important;
-} 
+}
 
 @media (max-width: 1600px) {
   .team {
@@ -120,5 +120,11 @@
   }
   .team_btn {
     width: 100%;
+  }
+  .left_body {
+    display: flex;
+  }
+  .left_box2 {
+    margin-right: 50px;
   }
 }
