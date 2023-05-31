@@ -1,17 +1,120 @@
-"use client"
-import React from 'react'
-import "../css/Team.css"
+"use client";
+import React from "react";
+import "../css/Team.css";
+import { BsCheckCircleFill } from "react-icons/bs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import Image from "next/image";
+import cardimg from "../images/user.jpg";
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function Team() {
   return (
-    <div className='team'>
+    <div className="team">
       <div className="team_left">
         <h1>Our Team</h1>
-        <ul>
-          <li>Praesent nibh luctus viverra</li>
-          <li></li>
-        </ul>
+        <div className="team_box">
+          <BsCheckCircleFill />
+          <p>Praesent nibh luctus viverra</p>
+        </div>
+        <div className="team_box">
+          <BsCheckCircleFill />
+          <p>Adipsing elit</p>
+        </div>
+        <div className="team_box">
+          <BsCheckCircleFill />
+          <p>Praesent nibh luctus viverra</p>
+        </div>
+        <div className="team_box">
+          <BsCheckCircleFill />
+          <p>Praesent nibh luctus viverra</p>
+        </div>
+        <div className="team_box">
+          <BsCheckCircleFill />
+          <p>Lorem, ipsum.</p>
+        </div>
+        <button className="team_btn">Learn More</button>
       </div>
+      <Swiper slidesPerView={3} spaceBetween={30} className="mySwiper">
+        <SwiperSlide className="team_card">
+          <Image src={cardimg} alt="" />
+          <div className="Tcard_box">
+            <div className="tel_box"></div>
+            <div className="email_box"></div>
+            <h2>George Brown</h2>
+            <p>Customer Advisor</p>
+            <a className="Tcard_email" href="#!">
+              george@vehica.com
+            </a>
+            <a className="Tcard_tel" href="tel: +998931513776">
+              (123) 345-6789
+            </a>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="team_card">
+          <Image src={cardimg} alt="" />
+          <div className="Tcard_box">
+            <div className="tel_box"></div>
+            <div className="email_box"></div>
+            <h2>George Brown</h2>
+            <p>Customer Advisor</p>
+            <a className="Tcard_email" href="#!">
+              george@vehica.com
+            </a>
+            <a className="Tcard_tel" href="tel: +998931513776">
+              (123) 345-6789
+            </a>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="team_card">
+          <Image src={cardimg} alt="" />
+          <div className="Tcard_box">
+            <div className="tel_box"></div>
+            <div className="email_box"></div>
+            <h2>George Brown</h2>
+            <p>Customer Advisor</p>
+            <a className="Tcard_email" href="#!">
+              george@vehica.com
+            </a>
+            <a className="Tcard_tel" href="tel: +998931513776">
+              (123) 345-6789
+            </a>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="team_card">
+            <Image src={cardimg} alt="" />
+            <div className="Tcard_box">
+              <div className="tel_box"></div>
+              <div className="email_box"></div>
+              <h2>George Brown</h2>
+              <p>Customer Advisor</p>
+              <a className="Tcard_email" href="#!">
+                george@vehica.com
+              </a>
+              <a className="Tcard_tel" href="tel: +998931513776">
+                (123) 345-6789
+              </a>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide className="team_card">
+            <Image src={cardimg} alt="" />
+            <div className="Tcard_box">
+              <div className="tel_box"></div>
+              <div className="email_box"></div>
+              <h2>George Brown</h2>
+              <p>Customer Advisor</p>
+              <a className="Tcard_email" href="#!">
+                george@vehica.com
+              </a>
+              <a className="Tcard_tel" href="tel: +998931513776">
+                (123) 345-6789
+              </a>
+          </div>
+        </SwiperSlide>
+      </Swiper>
     </div>
-  )
+  );
 }
