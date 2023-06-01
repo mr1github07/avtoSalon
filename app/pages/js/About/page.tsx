@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import Navbar from "./Navbar";
-import "../css/About.css";
+import Navbar from "../Navbar";
+import "../../css/About.css"
 import Image from "next/image";
-import office from "../images/office.jpg";
-import us from "../images/us.png";
-import gr from "../images/gr.jpg";
-import Team from "./Team";
-import img1 from "../images/galery.jpg";
+import office from "../../images/office.jpg";
+import us from "../../images/us.png";
+import gr from "../../images/gr.jpg";
+import Team from "../Team";
+import img1 from "../../images/galery.jpg";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -95,13 +95,11 @@ export default function About() {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel2a-content"
               >
-                <Typography>Accordion 1</Typography>
+                <Typography>Do you offer any sort of warranty?</Typography>
               </AccordionSummary>
               <AccordionDetails>
                 <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
+                  We can help with your financing plan, we can offer some tips and tricks. Drive off with this dream car of yours regardless of your credit history.
                 </Typography>
               </AccordionDetails>
             </Accordion>

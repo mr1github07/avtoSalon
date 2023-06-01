@@ -46,8 +46,7 @@ export default function Team() {
       <Swiper
         slidesPerView={3}
         spaceBetween={30}
-        loop={true}
-        className="mySwiper"
+        className="mySwiper" id="swiper"
       >
         <SwiperSlide className="team_card">
           <Image src={cardimg} alt="" />

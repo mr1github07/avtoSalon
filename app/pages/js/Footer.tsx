@@ -5,6 +5,7 @@ import '../css/Footer.css'
 import { FaFacebookF } from "react-icons/fa"
 import { FaTwitter } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa"
+import "../css/Featured.css"
 
 export default function Footer () {
   return (
@@ -12,7 +13,7 @@ export default function Footer () {
       <div className='footer_body'>
         <div className='ff'>
           <a href='/' className='logo'>
-            <Image src={logo} width={200} height={'auto'} alt='' />
+            <Image src={logo} width={200} alt='' />
           </a>
           <div className='footer_right'>
             <div className='right_left'>

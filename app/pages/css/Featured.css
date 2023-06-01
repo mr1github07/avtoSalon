@@ -149,6 +149,7 @@
 }
 .feat_left > p {
     color: #99a1b2;
+    margin-right: 20px;
 }
 .feat_tit {
     display: none;

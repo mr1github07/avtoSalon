@@ -3,8 +3,8 @@
     height: 80vh;
     background-image: url("../images/bg.jpg");
     background-repeat: no-repeat;
+    background-size: cover;
 }
-
 .headerBody1 {
     height: 40vh;
     display: flex;
