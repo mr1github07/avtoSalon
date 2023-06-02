@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './Navbar'
 import Image from 'next/image'
 import '../css/Home.css'
@@ -12,7 +12,8 @@ import InputLabel from '@mui/material/InputLabel'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
-
+import axios from 'axios'
+import { url }  from "./Host.tsx"
 // function getStyles (name, personName, theme) {
 //   return {
 //     fontWeight:
@@ -28,7 +29,11 @@ export default function Home () {
   // const handleChange = event => {
   //   setAge(event.target.value)
   // }
-
+  useEffect(
+    ()=>{
+      axios.get(`${url}`)
+    }
+  )
   return (
     <div>
       <div className='HomeHeader'>
