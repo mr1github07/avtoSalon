@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import axios from 'axios'
-import { url }  from "./Host.tsx"
+const { url }=require("./Host.tsx") 
 // function getStyles (name, personName, theme) {
 //   return {
 //     fontWeight:
@@ -24,16 +24,38 @@ import { url }  from "./Host.tsx"
 // }
 
 export default function Home () {
-  const [age, setAge] = React.useState('')
-
-  // const handleChange = event => {
-  //   setAge(event.target.value)
-  // }
+  
+  const [models, setModels] = React.useState([{id:0,name:"none"}])
+  const [series, setSeries] = React.useState([{id:0,name:"none"}])
+  const [position, setPosition] = React.useState([{id:0,name:"none"}])
+  
   useEffect(
     ()=>{
-      axios.get(`${url}`)
+      axios.get(`https://baracar.onrender.com/api/models/`).then(res=>{
+setModels(res.data)
+      })
     }
   )
+const getSeries=(value)=>{
+  console.log(value);
+var seriesdata=[]
+    axios.get(`https://baracar.onrender.com/api/series/`).then(res=>{
+      
+      
+    for (let i = 0; i < res.data.length; i++) {
+   if(!res.data[i].model){
+      if(res.data[i].model.id===value*1)
+    seriesdata.push(res.data[i])
+    }}
+    console.log(seriesdata)
+setSeries(seriesdata)
+          })
+
+}
+const getPosition=(key)=>{
+
+}
+
   return (
     <div>
       <div className='HomeHeader'>
@@ -45,12 +67,30 @@ export default function Home () {
             </h1>
             <div className='header_box'>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
+                <InputLabel id='demo-select-small-label'>Models</InputLabel>
+                <Select
+                  labelId='demo-select-small-label'
+                  id='demo-select-small'
+                  label='Models'
+                  value=''
+                  // onChange={handleChange}
+                >
+                  <MenuItem value=''>
+                    <em>None</em>
+                  </MenuItem>
+                 {models.map((item,key)=>{
+              return  <MenuItem key={key} onClick={()=>{getSeries(item.id)}} value={item.id}>{item.name}</MenuItem>
+                 }) }
+                 
+                </Select>
+              </FormControl>
+              <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
                 <InputLabel id='demo-select-small-label'>Age</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  value={age}
                   label='Age'
+                  value=''
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
@@ -66,25 +106,8 @@ export default function Home () {
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  value={age}
                   label='Age'
-                  // onChange={handleChange}
-                >
-                  <MenuItem value=''>
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
-                </Select>
-              </FormControl>
-              <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Age</InputLabel>
-                <Select
-                  labelId='demo-select-small-label'
-                  id='demo-select-small'
-                  value={age}
-                  label='Age'
+                  value=''
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>

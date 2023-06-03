@@ -1,2 +1,2 @@
-var url="https://baracar.onrender.com/"
-module.exports=url
+var url='https://baracar.onrender.com/'
+export default  url
