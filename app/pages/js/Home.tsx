@@ -31,6 +31,7 @@ export default function Home () {
   
   useEffect(
     ()=>{
+
       axios.get(`https://baracar.onrender.com/api/models/`).then(res=>{
 setModels(res.data)
       })
@@ -43,17 +44,29 @@ var seriesdata=[]
       
       
     for (let i = 0; i < res.data.length; i++) {
-   if(!res.data[i].model){
+   if(!(res.data[i].model==null)){
       if(res.data[i].model.id===value*1)
     seriesdata.push(res.data[i])
     }}
-    console.log(seriesdata)
+   
 setSeries(seriesdata)
           })
 
 }
-const getPosition=(key)=>{
-
+const getPosition=(value)=>{
+  console.log(value);
+var seriesdata=[]
+    axios.get(`https://baracar.onrender.com/api/position/`).then(res=>{
+      
+      
+    for (let i = 0; i < res.data.length; i++) {
+   if(!(res.data[i].series==null)){
+      if(res.data[i].series.id===value*1)
+    seriesdata.push(res.data[i])
+    }}
+   
+    setPosition(seriesdata)
+          })
 }
 
   return (
@@ -72,7 +85,7 @@ const getPosition=(key)=>{
                   labelId='demo-select-small-label'
                   id='demo-select-small'
                   label='Models'
-                  value=''
+                value={models[0].id}
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
@@ -85,20 +98,19 @@ const getPosition=(key)=>{
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Age</InputLabel>
+                <InputLabel id='demo-select-small-label'>Position</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  label='Age'
+                  label='Position'
                   value=''
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
-                    <em>None</em>
                   </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  {series.map((item,key)=>{
+              return  <MenuItem key={key} onClick={()=>{getPosition(item.id)}} value={item.id}>{item.name}</MenuItem>
+                 }) }
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
@@ -111,11 +123,10 @@ const getPosition=(key)=>{
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
-                    <em>None</em>
                   </MenuItem>
-                  <MenuItem value={10}>Ten</MenuItem>
-                  <MenuItem value={20}>Twenty</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  {position.map((item,key)=>{
+              return  <MenuItem key={key} value={item.id} >{item.name}</MenuItem>
+                 }) }
                 </Select>
               </FormControl>
               <button className='Btnbody header_btn'>
