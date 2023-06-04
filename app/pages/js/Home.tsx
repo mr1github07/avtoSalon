@@ -13,15 +13,8 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import axios from 'axios'
-const { url }=require("./Host.tsx") 
-// function getStyles (name, personName, theme) {
-//   return {
-//     fontWeight:
-//       personName.indexOf(name) === -1
-//         ? theme.typography.fontWeightRegular
-//         : theme.typography.fontWeightMedium
-//   }
-// }
+import Head from 'next/head'
+
 
 export default function Home () {
   
@@ -71,6 +64,9 @@ var seriesData=[]
 
   return (
     <div>
+      <Head>
+        <title>BaraCar-Hompage</title>
+      </Head>
       <div className='HomeHeader'>
         <Navbar />
         <div className='headerBody1'>
@@ -98,11 +94,11 @@ var seriesData=[]
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Position</InputLabel>
+                <InputLabel id='demo-select-small-label'>Series</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  label='Position'
+                  label='Series'
                   value=''
                   // onChange={handleChange}
                 >
@@ -114,11 +110,11 @@ var seriesData=[]
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Age</InputLabel>
+                <InputLabel id='demo-select-small-label'>Pasition</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  label='Age'
+                  label='Pasition'
                   value=''
                   // onChange={handleChange}
                 >
