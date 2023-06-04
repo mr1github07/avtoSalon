@@ -13,15 +13,8 @@ import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
 import Select from '@mui/material/Select'
 import axios from 'axios'
-const { url }=require("./Host.tsx") 
-// function getStyles (name, personName, theme) {
-//   return {
-//     fontWeight:
-//       personName.indexOf(name) === -1
-//         ? theme.typography.fontWeightRegular
-//         : theme.typography.fontWeightMedium
-//   }
-// }
+import Head from 'next/head'
+
 
 export default function Home () {
   
@@ -39,38 +32,41 @@ setModels(res.data)
   )
 const getSeries=(value)=>{
   console.log(value);
-var seriesdata=[]
-    axios.get(`https://baracar.onrender.com/api/series/`).then(res=>{
+var seriesData=[]
+    axios.get(`https://baracar.onrender.com/api/series_get/`).then(res=>{
       
       
     for (let i = 0; i < res.data.length; i++) {
    if(!(res.data[i].model==null)){
       if(res.data[i].model.id===value*1)
-    seriesdata.push(res.data[i])
+    seriesData.push(res.data[i])
     }}
    
-setSeries(seriesdata)
+setSeries(seriesData)
           })
 
 }
 const getPosition=(value)=>{
   console.log(value);
-var seriesdata=[]
-    axios.get(`https://baracar.onrender.com/api/position/`).then(res=>{
+var seriesData=[]
+    axios.get(`https://baracar.onrender.com/api/position_get/`).then(res=>{
       
       
     for (let i = 0; i < res.data.length; i++) {
    if(!(res.data[i].series==null)){
       if(res.data[i].series.id===value*1)
-    seriesdata.push(res.data[i])
+    seriesData.push(res.data[i])
     }}
    
-    setPosition(seriesdata)
+    setPosition(seriesData)
           })
 }
 
   return (
     <div>
+      <Head>
+        <title>BaraCar-Hompage</title>
+      </Head>
       <div className='HomeHeader'>
         <Navbar />
         <div className='headerBody1'>
@@ -98,11 +94,11 @@ var seriesdata=[]
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Position</InputLabel>
+                <InputLabel id='demo-select-small-label'>Series</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  label='Position'
+                  label='Series'
                   value=''
                   // onChange={handleChange}
                 >
@@ -114,11 +110,11 @@ var seriesdata=[]
                 </Select>
               </FormControl>
               <FormControl id='inp2' sx={{ m: 1, minWidth: 200 }}>
-                <InputLabel id='demo-select-small-label'>Age</InputLabel>
+                <InputLabel id='demo-select-small-label'>Pasition</InputLabel>
                 <Select
                   labelId='demo-select-small-label'
                   id='demo-select-small'
-                  label='Age'
+                  label='Pasition'
                   value=''
                   // onChange={handleChange}
                 >

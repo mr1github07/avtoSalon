@@ -397,7 +397,7 @@ export default function Search() {
         </div>
         <div className="result_wrapper">
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -410,7 +410,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -423,7 +423,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -436,7 +436,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -450,7 +450,7 @@ export default function Search() {
           </div>
 
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -463,7 +463,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -476,7 +476,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
@@ -489,7 +489,7 @@ export default function Search() {
             </div>
           </div>
 
-          <div className='feat_card'>
+          <div className='feat_card2'>
             <Image src={car} alt='a' className='featured_img' />
             <div className='featCard_bottom'>
               <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>

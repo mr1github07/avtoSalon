@@ -9,9 +9,11 @@ import Login from './pages/js/Login'
 export default function page() {
   return (
     <div>
-      <Login />
-      {/* <Home />
-      <Footer /> */}
+
+      
+      <Home />
+      <Footer />
+
     </div>
   )
 }
