@@ -1,0 +1,273 @@
+.asosiy {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+}
+
+.all-button button {
+    width: 50%;
+    height: 50px;
+    border: none;
+    border-radius: 15px 15px 0px 0px;
+    margin-top: 2px;
+    color: black;
+}
+
+
+
+
+
+
+.form {
+    width: 50%;
+}
+
+.asos_form {
+    padding-left: 15%;
+    padding-top: 120px;
+    width: 70%;
+    height: 97vh;
+    margin-top: -30px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.all-button button {
+    font-size: 2vw;
+    font-weight: 100;
+}
+
+.inputs input {
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 0 rgba(196, 196, 196, 0.24);
+    border: solid 1px #e7edf3;
+    height: 53px;
+    margin-top: 20px;
+    padding: 0 27px;
+    font-size: 15px;
+    color: #2f3b48;
+    width: 100%;
+    
+}
+
+
+.asos_form p {
+    height: 10px;
+    font-weight: 400;
+    font-size: 1.6vw;
+    margin-left: 20px;
+}
+
+.galoch {
+    width: 37%;
+    margin-top: 50px;
+}
+
+
+
+.p1 {
+    margin-left: -6% !important;
+}
+
+.google {
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 27%;
+}
+
+.galochk {
+    width: 60%;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: flex;
+}
+
+.buttons button {
+    margin-top: 40px;
+    width: 40%;
+    height: 60px;
+    border: none;
+    border-radius: 45px;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.yashil {
+    background: #03975C;
+    margin-left: 20px;
+    color: white;
+}
+
+.oq {
+    background-color: #FFFFFF;
+}
+
+@media(max-width:500px) {
+    .galoch {
+        width: 200px;
+    }
+
+    .galochk {
+        width: 200px;
+    }
+}
+
+@media(max-width:1000px) {
+    .asos_form p {
+        height: 10px;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .all-button button {
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .buttons button {
+        margin-top: 40px;
+        width: 40%;
+        height: 8vh;
+        border: none;
+        border-radius: 45px;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    input {
+        padding-left: 20px;
+        font-size: 15px;
+        width: 90%;
+        height: 8vh;
+        background: #FFFFFF;
+        border-radius: 45px;
+        border: none;
+    }
+}
+
+@media(max-width:800px) {
+    .asos_form p {
+        height: 10px;
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .all-button button {
+        font-size: 20px;
+        font-weight: 100;
+    }
+
+    .buttons button {
+        margin-top: 40px;
+        width: 40%;
+        height: 8vh;
+        border: none;
+        border-radius: 45px;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    input {
+        padding-left: 20px;
+        font-size: 15px;
+        width: 90%;
+        height: 8vh;
+        background: #FFFFFF;
+        border-radius: 45px;
+        border: none;
+    }
+
+    .asosiy {
+        display: block;
+    }
+
+    #fon {
+        margin-top: 0px;
+    }
+
+    #fon1 {
+        margin-top: 0px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .logo {
+        width: 100%;
+    }
+}
+
+.rasm {
+    margin-left: 4%;
+    width: 60% !important;
+}
+.checkbox{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.checkbox1{
+    display: flex;
+    margin-top: 40px;
+}
+.check{
+    display: flex;
+    align-items: center;
+}
+.check2{
+    display: flex;
+}
+.checkbox p{
+    font-size: 15px;
+}
+.check2 input{
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.check input{
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+.vehica-checkbox input:checked + label:before {
+    background: #ff6900 !important;
+    border-color: #ff6900 !important;
+}
+.login button{
+    width: 120px;
+    height: 50px;
+    background-color: #ff4605;
+    font-size: 17px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+input[type="checkbox"] {
+    background: #990000 !important;    
+}
+#cb1 {
+    accent-color: #ff4605;
+    border: none ;
+  }
+  
+.check p{
+    height: 0px;
+    margin-left: 10px !important;
+}
+.check2 p{
+    height: 0px;
+    margin-left: 10px !important;
+}
