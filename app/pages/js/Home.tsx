@@ -39,33 +39,33 @@ setModels(res.data)
   )
 const getSeries=(value)=>{
   console.log(value);
-var seriesdata=[]
-    axios.get(`https://baracar.onrender.com/api/series/`).then(res=>{
+var seriesData=[]
+    axios.get(`https://baracar.onrender.com/api/series_get/`).then(res=>{
       
       
     for (let i = 0; i < res.data.length; i++) {
    if(!(res.data[i].model==null)){
       if(res.data[i].model.id===value*1)
-    seriesdata.push(res.data[i])
+    seriesData.push(res.data[i])
     }}
    
-setSeries(seriesdata)
+setSeries(seriesData)
           })
 
 }
 const getPosition=(value)=>{
   console.log(value);
-var seriesdata=[]
-    axios.get(`https://baracar.onrender.com/api/position/`).then(res=>{
+var seriesData=[]
+    axios.get(`https://baracar.onrender.com/api/position_get/`).then(res=>{
       
       
     for (let i = 0; i < res.data.length; i++) {
    if(!(res.data[i].series==null)){
       if(res.data[i].series.id===value*1)
-    seriesdata.push(res.data[i])
+    seriesData.push(res.data[i])
     }}
    
-    setPosition(seriesdata)
+    setPosition(seriesData)
           })
 }
 

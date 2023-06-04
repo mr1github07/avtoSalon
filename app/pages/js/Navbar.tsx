@@ -48,14 +48,14 @@ export default function Navbar () {
         <a href='/' className='logo'>
           <Image src={logo} width={200} height={'auto'} alt='' />
         </a>
-        <a href='#' className='a_fff'>
+        <a href='/' className='a_fff'>
           Home
         </a>
-        <a href='#' className='a_fff'>
+        <a href='/cars' className='a_fff'>
           Search
         </a>
-        <a href='#' className='a_fff'>
-          Lising
+        <a href='/about' className='a_fff'>
+          About
         </a>
         <a href='#' className='a_fff'>
           Pages
