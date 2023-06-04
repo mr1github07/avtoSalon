@@ -24,7 +24,7 @@ const { url }=require("./Host.tsx")
 // }
 
 export default function Home () {
-  
+  const [select,setSelect]=React.useState("")
   const [models, setModels] = React.useState([{id:0,name:"none"}])
   const [series, setSeries] = React.useState([{id:0,name:"none"}])
   const [position, setPosition] = React.useState([{id:0,name:"none"}])
@@ -38,18 +38,19 @@ setModels(res.data)
     }
   )
 const getSeries=(value)=>{
+  setSelect(value)
   console.log(value);
-var seriesdata=[]
+  var seriesData=[]
     axios.get(`https://baracar.onrender.com/api/series/`).then(res=>{
       
       
     for (let i = 0; i < res.data.length; i++) {
    if(!(res.data[i].model==null)){
       if(res.data[i].model.id===value*1)
-    seriesdata.push(res.data[i])
+    seriesData.push(res.data[i])
     }}
    
-setSeries(seriesdata)
+setSeries(seriesData)
           })
 
 }
@@ -85,7 +86,7 @@ var seriesdata=[]
                   labelId='demo-select-small-label'
                   id='demo-select-small'
                   label='Models'
-                value={models[0].id}
+                value={select}
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
@@ -103,7 +104,7 @@ var seriesdata=[]
                   labelId='demo-select-small-label'
                   id='demo-select-small'
                   label='Position'
-                  value=''
+                  value={position.id}
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
@@ -119,7 +120,7 @@ var seriesdata=[]
                   labelId='demo-select-small-label'
                   id='demo-select-small'
                   label='Age'
-                  value=''
+                  value={models[0].id}
                   // onChange={handleChange}
                 >
                   <MenuItem value=''>
