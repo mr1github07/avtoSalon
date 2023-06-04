@@ -67,7 +67,7 @@ export default function Navbar () {
       <div className='navbar_right'>
         <div className='loginIn'>
           <AiOutlineUser className='user_icon' />
-          <a href='#' className='a_fff'>
+          <a href='' className='a_fff'>
             Login In
           </a>
         </div>
