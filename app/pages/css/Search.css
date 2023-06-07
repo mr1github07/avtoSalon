@@ -214,6 +214,7 @@
 .featCard_price {
     margin-top: 5px;
     font-size: 20px;
+    text-align: right;
 }
 
 .featCard_year {
@@ -362,4 +363,20 @@
     .searchBox {
         width: 260px !important;
     }
+}
+
+.salesale{
+    font-size: 30px;
+    color: white;
+    text-shadow: -1px 2px red;
+    position: absolute;
+    right: 1px;
+}
+.feat-cardorab{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+.feat-cardorab del{
+opacity: 0.6;
 }

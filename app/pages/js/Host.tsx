@@ -1,2 +1,4 @@
-var url='https://baracar.onrender.com'
-export default  url
+var url='https://baracar.onrender.com';
+export default  url;
+
+
