@@ -28,6 +28,7 @@ export default function Search() {
   const [Featur, setFeatur] = React.useState('')
   const [makes, setMakes] = React.useState([])
   const [images, setImages] = React.useState([])
+  const [data1, setdata1] = React.useState([])
 
 
 
@@ -38,8 +39,10 @@ export default function Search() {
     if(event.value==item.includes(position.name)){
     data.push(item)
     }
-    console.log(data,"salom");
+    setMakes(data)
     })
+    console.log(data,"salom");
+    
   }
   const modelSearch = event => {
     setModel(event.target.value)
