@@ -8,6 +8,9 @@
 
 * {
     font-family: 'Mulish', sans-serif;
+
+    box-sizing: border-box;
+
 }
 
 .form1 {
@@ -20,11 +23,15 @@
     padding-bottom: 60px;
 }
 
+
 /* .katta{
     width: 84%;
 } */
 .inputla h2 {
     font-size: 18px;
+}
+.inputla h2 {
+    font-size: 16px;
     font-weight: bold;
     color: #222732;
 }
@@ -33,6 +40,13 @@
     width: 84%;
     margin-left: 8%;
     margin-top: 50px;
+}
+
+
+
+.kata{
+    width: 80%;
+    margin-left: 10%;
 }
 
 .inputla input {
@@ -60,6 +74,7 @@
     width: 48%;
 }
 
+
 .accaunt-detailes {
     /* width: 100%; */
     display: flex;
@@ -67,12 +82,21 @@
     padding: 20px;
 }
 
+.katta {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
 .profil {
     text-align: center;
     border-radius: 0px 20px 20px 0px;
     width: 357px;
+
     padding-left: 20px;
     padding-right: 20px;
+
+
     background-color: rgba(226, 230, 238, 0.5);
 }
 
@@ -147,6 +171,7 @@
     font-weight: 400;
     font-size: 17px;
     margin-left: 11%;
+    margin-left: 30px;
     color: #ff4605;
 }
 
@@ -173,6 +198,7 @@
     background-color: rgba(153, 161, 178, 0.16);
     margin-left: 20px;
 }
+
 
 .profil1 input {
     top: 0px;
@@ -207,6 +233,14 @@
     padding-bottom: 30px;
 }
 
+
+.profil h2{
+    margin-top: 40px;
+    font-weight: 500;
+    font-size: 17px;
+    padding-bottom: 30px;
+}
+
 .bb1 {
     margin-top: 40px;
     font-weight: 400 !important;
@@ -214,6 +248,7 @@
     color: #99a1b2;
     padding-bottom: 0px !important;
 }
+
 
 .icon1 {
     font-size: 80px !important;
@@ -516,4 +551,9 @@
     
     margin-top: 60px;
     padding: 15px;
+}
+.icon1{
+    font-size: 80px !important;
+    color: rgb(194, 194, 194);
+
 }

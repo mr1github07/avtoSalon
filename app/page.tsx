@@ -11,9 +11,9 @@ export default function page() {
   return (
     <div>
 
-      <Login />
-      {/* <Home />
-      <Footer /> */}
+      
+      <Home />
+      <Footer />
 
     </div>
   )

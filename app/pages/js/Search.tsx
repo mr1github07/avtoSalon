@@ -11,36 +11,47 @@ import { IoIosCloseCircle } from 'react-icons/io'
 import car from "../images/6.jpg"
 import Image from "next/image"
 import Pagination from '@mui/material/Pagination';
+import axios from "axios";
+import url from '../js/Host'
+import { isTemplateExpression } from 'typescript'
 
-var makes = [
-  {
-    name: 'audi'
-  },
-  {
-    name: 'BMW'
-  },
-  {
-    name: 'Mers'
-  }
-]
+
 export default function Search() {
   const [Make, setMake] = React.useState('')
   const [model, setModel] = React.useState('')
   const [Distance, setDistance] = React.useState('')
+  const [location, setlocation] = React.useState('')
   const [Type, setType] = React.useState('')
   const [Mileage, setMileage] = React.useState('')
   const [Drive, setDrive] = React.useState('')
   const [Fuel, setFuel] = React.useState('')
   const [Featur, setFeatur] = React.useState('')
+  const [makes, setMakes] = React.useState([])
+  const [images, setImages] = React.useState([])
+  const [data1, setdata1] = React.useState([])
+
+
 
   const makeSearch = event => {
     setMake(event.target.value)
+    var data=[]
+    makes.map(item=>{
+    if(event.value==item.includes(position.name)){
+    data.push(item)
+    }
+    setMakes(data)
+    })
+    console.log(data,"salom");
+    
   }
   const modelSearch = event => {
     setModel(event.target.value)
   }
   const distanceSearch = event => {
     setDistance(event.target.value)
+  }
+  const loacationSearch = event => {
+    setlocation(event.target.value)
   }
   const TypeSearch = event => {
     setType(event.target.value)
@@ -64,6 +75,26 @@ export default function Search() {
   const closeModal2 = () => {
     document.querySelector('.mobile_search').classList.remove('db')
   }
+
+
+
+  useEffect(() => {
+    axios.get(`${url}/api/cars_get/`).then(res => {
+      setMakes(res.data)
+    }).catch(err => {
+      console.log(err, "salom");
+    })
+  }, [])
+  useEffect(() => {
+    axios.get(`${url}/api/images/`).then(res => {
+      setImages(res.data)
+    }).catch(err => {
+      console.log(err, "salom");
+    })
+  }, [])
+
+
+
   return (
     <div>
       <Navbar />
@@ -71,7 +102,7 @@ export default function Search() {
         <div className='search_top_body'>
           <Box>
             <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Make</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Position</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
@@ -80,7 +111,23 @@ export default function Search() {
                 onChange={makeSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.position.name}>{item.position.name}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box>
+            <FormControl className='inpsearch'>
+              <InputLabel id='demo-simple-select-label'>Series</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={model}
+                label='model'
+                onChange={modelSearch}
+              >
+                {makes.map(item => {
+                  return <MenuItem value={item.position.series.name}>{item.position.series.name}</MenuItem>
                 })}
               </Select>
             </FormControl>
@@ -91,36 +138,35 @@ export default function Search() {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={model}
-                label='model'
-                onChange={modelSearch}
-              >
-                {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
-                })}
-              </Select>
-            </FormControl>
-          </Box>
-          <input type='text' className='searchInp' placeholder='Location' />
-          <Box>
-            <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Distance</InputLabel>
-              <Select
-                labelId='demo-simple-select-label'
-                id='demo-simple-select'
                 value={Distance}
                 label='Distance'
                 onChange={distanceSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.position.series.model.name}>{item.position.series.model.name}</MenuItem>
                 })}
               </Select>
             </FormControl>
           </Box>
           <Box>
             <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Type</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Location</InputLabel>
+              <Select
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
+                value={location}
+                label='location'
+                onChange={loacationSearch}
+              >
+                {makes.map(item => {
+                  return <MenuItem value={item.branch.name}>{item.branch.name}</MenuItem>
+                })}
+              </Select>
+            </FormControl>
+          </Box>
+          <Box>
+            <FormControl className='inpsearch'>
+              <InputLabel id='demo-simple-select-label'>Name</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
@@ -157,14 +203,14 @@ export default function Search() {
                 onChange={MileageSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.distance}>{item.distance}</MenuItem>
                 })}
               </Select>
             </FormControl>
           </Box>
           <Box>
             <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Drive Type</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Gearbox</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
@@ -173,7 +219,7 @@ export default function Search() {
                 onChange={DriveSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.gearbox.name}>{item.gearbox.name}</MenuItem>
                 })}
               </Select>
             </FormControl>
@@ -189,14 +235,14 @@ export default function Search() {
                 onChange={FuelSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.fuel_sort.name}>{item.fuel_sort.name}</MenuItem>
                 })}
               </Select>
             </FormControl>
           </Box>
           <Box>
             <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Featured</InputLabel>
+              <InputLabel id='demo-simple-select-label'>Year</InputLabel>
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
@@ -205,7 +251,7 @@ export default function Search() {
                 onChange={FeaturSearch}
               >
                 {makes.map(item => {
-                  return <MenuItem value={item.name}>{item.name}</MenuItem>
+                  return <MenuItem value={item.year}>{item.year}</MenuItem>
                 })}
               </Select>
             </FormControl>
@@ -373,7 +419,7 @@ export default function Search() {
       </div>
       <div className='search_body'>
         <div className="body_top">
-          <h2>100 Results</h2>
+          <h2>{makes.length} Results</h2>
           <div className="top_box">
             <p>Sort by:</p>
             <Box className="inpsearch3">
@@ -395,114 +441,31 @@ export default function Search() {
 
           </div>
         </div>
+        
+
+            
         <div className="result_wrapper">
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
+          {makes.map((item,key) => {
+            return (
+              <div key={key} className='feat_card2'>
+                <div>
+                  <h1 className="salesale">-{(item).sale}%</h1>
+                  <Image src={car} alt='a' className='featured_img' />
+                  <div className='featCard_bottom'>
+                    <div className='feat-cardorab'><h3 className='featCard_name'>{item.name}</h3><del>{item.price}.sum</del></div>
+                    <h4 className='featCard_price'>{item.price-((item.price*item.sale/100).toFixed(0))}.sum</h4>
+                    <div className='featCard_box'>
+                      <p className='featCard_year'>{item.year}</p>
+                      <p className='featCard_auto'>{item.gearbox.name}</p>
+                      <p className='featCard_pet'>{item.fuel_sort.name}</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
+            )
+          })}
           </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-          <div className='feat_card2'>
-            <Image src={car} alt='a' className='featured_img' />
-            <div className='featCard_bottom'>
-              <h3 className='featCard_name'>BMW 8-serie 2-door coupe grey</h3>
-              <h4 className='featCard_price'>$4000</h4>
-              <div className='featCard_box'>
-                <p className='featCard_year'>2021</p>
-                <p className='featCard_auto'>Automatic</p>
-                <p className='featCard_pet'>Petrol</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
+        
         <Pagination count={10} color="secondary" />
       </div>
     </div>
