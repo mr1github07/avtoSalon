@@ -113,6 +113,111 @@ export default function Featured() {
             "time_create": "2023-06-05T11:46:42.046941Z",
             "time_update": "2023-06-06T15:29:10.434679Z",
             "is_active": true
+        },
+    
+        {
+            "id": 43,
+            "position": {
+                "id": 9,
+                "name": "2-positsiya",
+                "series": {
+                    "id": 7,
+                    "name": "malibu",
+                    "model": {
+                        "id": 2,
+                        "name": "Chevrolet"
+                    }
+                }
+            },
+            "fuel_sort": {
+                "id": 6,
+                "name": "elektr"
+            },
+            "gearbox": {
+                "id": 2,
+                "name": "mexanik"
+            },
+            "garant": {
+                "id": 13,
+                "name": "4 yil",
+                "time": 1
+            },
+            "branch": {
+                "id": 5,
+                "name": "Chilanzar branch",
+                "country": "Uzbekistan",
+                "region": "Tashkent",
+                "city": "Tashkent",
+                "district": "Chilanzar",
+                "street": "Ulugbek 12"
+            },
+            "name": "SALOM",
+            "initial_price": 10000.0,
+            "price": 10000.0,
+            "sale": 60.0,
+            "depozit": 10.0,
+            "fuel_consumption": 11.0,
+            "year": 2023,
+            "distance": 10.0,
+            "engine": 111.0,
+            "colour": "red",
+            "views": 6,
+            "description": "111",
+            "time_create": "2023-06-07T10:40:18.019343Z",
+            "time_update": "2023-06-07T10:40:18.019358Z",
+            "is_active": true
+        }, {
+
+        "id": 44,
+        "position": {
+            "id": 3,
+            "name": "gentra",
+            "series": {
+                "id": 2,
+                "name": "lacetti",
+                "model": {
+                    "id": 2,
+                    "name": "Chevrolet"
+                }
+            }
+        },
+        "fuel_sort": {
+            "id": 4,
+            "name": "gaz"
+        },
+        "gearbox": {
+            "id": 2,
+            "name": "mexanik"
+        },
+        "garant": {
+            "id": 11,
+            "name": "10 yil",
+            "time": 1
+        },
+        "branch": {
+            "id": 6,
+            "name": "Yashnabod branch",
+            "country": "Uzbekistan",
+            "region": "Toshkent",
+            "city": "Toshkent",
+            "district": "Yashnabod",
+            "street": "Mohinur ko'chasi"
+        },
+        "name": "qwdqqew2",
+        "initial_price": 10000.0,
+        "price": 10000.0,
+        "sale": 30.0,
+        "depozit": 10.0,
+        "fuel_consumption": 11.0,
+        "year": 2022,
+        "distance": 100.0,
+        "engine": 20.0,
+        "colour": "red",
+        "views": 1111,
+        "description": "1",
+        "time_create": "2023-06-07T10:41:35.620711Z",
+        "time_update": "2023-06-07T10:41:35.620724Z",
+        "is_active": true
         }
     ]
 )    
@@ -201,18 +306,18 @@ export default function Featured() {
               </div>
             </div>
           </div>
-          <div className="feat_card">
-            <Image src={car} alt="a" className="featured_img" />
-            <div className="featCard_bottom">
-              <h3 className="featCard_name">BMW 8-serie 2-door coupe grey</h3>
-              <h4 className="featCard_price">$4000</h4>
-              <div className="featCard_box">
-                <p className="featCard_year">2021</p>
-                <p className="featCard_auto">Automatic</p>
-                <p className="featCard_pet">Petrol</p>
-              </div>
+            <div className="feat_card">
+                <Image src={car} alt="a" className="featured_img" />
+                <div className="featCard_bottom">
+                <h3 className="featCard_name">BMW 8-serie 2-door coupe grey</h3>
+                <h4 className="featCard_price">$4000</h4>
+                <div className="featCard_box">
+                    <p className="featCard_year">2021</p>
+                    <p className="featCard_auto">Automatic</p>
+                    <p className="featCard_pet">Petrol</p>
+                </div>
+                </div>
             </div>
-          </div>
         </div>
         <div className="mobileFeat_card">
           <div className="feat_card">
