@@ -295,3 +295,20 @@
         display: none;
     }
 }
+
+.feat_p{
+    width: 30%;
+    height: 40px;
+    transform: rotate(40deg);
+    text-align: center;
+    color: #000 !important;
+    position: absolute;
+    font-weight: 700 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999999999 !important;
+    top: -560px;
+    background: #ff6505 !important;
+    right: -40px;
+}
