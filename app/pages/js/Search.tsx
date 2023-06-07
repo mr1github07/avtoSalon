@@ -11,18 +11,10 @@ import { IoIosCloseCircle } from 'react-icons/io'
 import car from "../images/6.jpg"
 import Image from "next/image"
 import Pagination from '@mui/material/Pagination';
+import axios from "axios";
+import url 
 
-var makes = [
-  {
-    name: 'audi'
-  },
-  {
-    name: 'BMW'
-  },
-  {
-    name: 'Mers'
-  }
-]
+
 export default function Search() {
   const [Make, setMake] = React.useState('')
   const [model, setModel] = React.useState('')
@@ -32,6 +24,7 @@ export default function Search() {
   const [Drive, setDrive] = React.useState('')
   const [Fuel, setFuel] = React.useState('')
   const [Featur, setFeatur] = React.useState('')
+  const [makes, setMakes] = React.useState([])
 
   const makeSearch = event => {
     setMake(event.target.value)
@@ -64,6 +57,15 @@ export default function Search() {
   const closeModal2 = () => {
     document.querySelector('.mobile_search').classList.remove('db')
   }
+
+
+
+  useEffect(()=>{
+    axios.get(`${url}/api/cars_get/`).then(res=>{
+    setMakes(res.data)
+    })
+  },[])
+
   return (
     <div>
       <Navbar />
@@ -101,7 +103,6 @@ export default function Search() {
               </Select>
             </FormControl>
           </Box>
-          <input type='text' className='searchInp' placeholder='Location' />
           <Box>
             <FormControl className='inpsearch'>
               <InputLabel id='demo-simple-select-label'>Distance</InputLabel>
@@ -118,6 +119,7 @@ export default function Search() {
               </Select>
             </FormControl>
           </Box>
+          <input type='text' className='searchInp' placeholder='Location' />
           <Box>
             <FormControl className='inpsearch'>
               <InputLabel id='demo-simple-select-label'>Type</InputLabel>
