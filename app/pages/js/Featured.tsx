@@ -1,13 +1,34 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Image from 'next/image'
 import car from "../images/6.jpg"
 import "../css/Featured.css"
 import { FaFacebookF } from "react-icons/fa"
 import { FaTwitter } from "react-icons/fa"
 import { FaInstagram } from "react-icons/fa"
+import axios from 'axios'
+import url from './Host'
 
 export default function Featured() {
-    return (
+  const [ cars, setCars ] = React.useState([])
+  const [ price, setPrice ] = React.useState([])
+
+  useEffect(() => {
+    axios.get(`${url}/api/cars_get/`).then(res => {
+      setCars(res.data)
+    // console.log(res.data, 'fgkhl;');
+    })
+    // var s = cars[0].sale
+    // var p = cars[0].price
+    // if (s == 0) {
+    //     setPrice(p)
+    // } else {
+    //     var f = p-(p*s/100)
+    //     setPrice(f)
+    // }
+    
+  }, []);
+
+  return (
         <div className='featured'>
             <h5 className='featured_info'>Handy picked</h5>
             <h2 className='featured_title'>Featured Listings</h2>
@@ -15,13 +36,13 @@ export default function Featured() {
                 <div className="featured_left">
                     <Image src={car} alt='a' className='featured_img' />
                     <div className="featured_bottom">
-                        <h3 className='featured_name'>BMW 8-serie 2-door coupe grey</h3>
+                        <h3 className='featured_name'>{cars[0].name}</h3>
                         <div className="featured_box">
                             <p className='feat_year'>2021</p>
-                            <p className='feat_auto'>Automatic</p>
-                            <p className="feat_pet">Petrol</p>
-                            <p className='feat_p'>Front Wheel Drive</p>
-                            <h4 className='feat_price'>$6200</h4>
+                            <p className='feat_auto'>{cars[0].gearbox.name}</p>
+                            <p className="feat_pet">{cars[0].fuel_sort.name}</p>
+                            <p className='feat_p'>{cars[0].sale}</p>
+                            <h4 className='feat_price'>{price}.sum</h4>
                         </div>
                     </div>
                 </div>
