@@ -5,14 +5,15 @@ import Footer from './pages/js/Footer'
 import About from './pages/js/About/page'
 import Contact from './pages/js/Contact'
 import Login from './pages/js/Login'
+import Loginpage from './pages/js/Loginpage'
 
 export default function page() {
   return (
     <div>
 
-      
-      <Home />
-      <Footer />
+      <Login />
+      {/* <Home />
+      <Footer /> */}
 
     </div>
   )
