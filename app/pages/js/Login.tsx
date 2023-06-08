@@ -27,9 +27,7 @@ export default function Login() {
   };
   useEffect(() => {
     axios
-      .get(`${url}/auth/users/`, {
-        headers: { Authorization: "Bearer " + sessionStorage.getItem("token") },
-      })
+      .get(`${url}/auth/users/`, { headers: { Authorization: "Bearer " + sessionStorage.getItem("token") }})
       .then((res) => {
         console.log(res.data, "onnlkml;kpll;lmml;l;mlnml");
       });
@@ -122,7 +120,7 @@ export default function Login() {
           </div>
         </div>
       </center>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

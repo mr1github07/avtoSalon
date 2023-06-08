@@ -7,8 +7,10 @@ import About from '../pages/js/About/page'
 
 interface pageProps{}
 const page: FC<pageProps>=({})=>{
-    return <div> <About/>
-      <Footer /></div>
+    return <div>
+       <About/>
+      <Footer />
+      </div>
 } 
 export default page
 
