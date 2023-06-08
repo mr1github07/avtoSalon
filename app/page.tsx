@@ -5,13 +5,18 @@ import Footer from './pages/js/Footer'
 import About from './pages/js/About/page'
 import Contact from './pages/js/Contact'
 import Login from './pages/js/Login'
+import Bmw8 from './pages/js/Bmw8'
+import Loginpage from './pages/js/Loginpage'
+
+
+
 
 export default function page() {
   return (
     <div>
-      
-      <Home />
-      <Footer />
+      <Bmw8/>
+      {/* <Home />
+      <Footer /> */}
     </div>
   )
 }

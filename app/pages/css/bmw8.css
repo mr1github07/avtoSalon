@@ -1,0 +1,373 @@
+.swiper {
+    width: 100%;
+    margin-top: 20px;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    height: 80%;
+    width: 100%;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%; 
+    object-fit: cover;
+}
+.swip{
+    cursor: pointer;
+}
+
+.simg{
+    height: 15vh !important;
+    border-radius: 20px;
+}
+
+.mySwiper .swiper-slide{
+    width:20% !important;
+}
+
+.s2img{
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 35px !important;
+}
+
+.swip{
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+}
+
+.dfc{
+    width: 60%;
+}
+
+.swiper-button-next::after, .swiper-button-prev::after{
+    display: none;
+}
+.swiper-button-next{
+    width: 50px;
+    height: 50px;
+    background: white !important;
+    border-radius: 50%;
+    border: 5px solid white;
+    background: url("https://static.thenounproject.com/png/1076470-200.png") !important;
+    background-size: 10px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 10px black !important;
+    margin-right: 100%;
+    transition: .5s;
+}
+.swiper-button-prev{
+    width: 50px;
+    height: 50px;
+    background: white !important;
+    border-radius: 50%;
+    border: 5px solid white;
+    background: url("https://static.thenounproject.com/png/1076470-200.png") !important;
+    box-shadow: 0px 0px 10px black !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: 100%;
+    transition: .5s;
+}
+.swip:hover .swiper-button-prev{
+margin-left: 0%;
+}
+.swip:hover .swiper-button-next{
+    margin-right: 0%;
+}
+.ypn{
+    width: 40%;
+    margin-left: 10%;
+}
+.ypn hr{
+    margin-top: 30px;
+    background-color: #A7A8A8;
+    width: 90%;
+}
+.hf {
+    color: #222732;
+    font-family: serif;
+    font-size: 13.5px;
+    margin-top: 50px;
+}
+.hf1 {
+    color: #222732;
+    font-family: serif;
+    font-size: 15px;
+    margin-top: 50px;
+    display: none;
+}
+.lk{
+    display: flex;
+    margin-top: 20px;
+}
+.lk1{
+    display: flex;
+    margin-top: 20px;
+    display: none;
+}
+.lk p{
+    color: #A7A8A8;
+}
+.lk1 p{
+    color: #A7A8A8;
+}
+.l1{
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    color: #ff4605;
+}
+.l2{
+    display: flex;
+    justify-content: space-around;
+    width: 35%;
+    color: #ff4605;
+}
+.df10{
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-left: 10%;
+}
+.l1 p{
+    color: #A7A8A8;
+    cursor: pointer;
+}
+.l2 p{
+    color: #A7A8A8;
+    cursor: pointer;
+}
+.l1 p:hover{
+    color: #222732;
+}
+.l2 p:hover{
+    color: #222732;
+}
+
+
+    @media (max-width:1200px) {
+        .dfc{
+            display: block;
+        }
+        .hf{
+            display: none;
+        }
+        .hf1{
+            display: flex;
+        }
+        .lk{
+            display: none;
+        }
+        .lk1{
+            display: flex;
+        }
+        .assaa{
+            display: flex;
+        }
+        .asdda{
+            display: none;
+        }
+        .ypn{
+            margin-top: 120px;
+            width: 100%;
+        }
+        .swip{
+            width: 100%;
+        }
+        
+        .ypn{
+            display: none;
+        }
+            .ypn1{
+                width: 100%;
+                margin-top: 150px;
+            }
+            .dfc{
+                width: 100%;
+            }
+            .oxirkotta button{
+                width: 90%;
+                margin-left: 5%;
+            }
+    }
+    .lll {
+        list-style: none;
+    }
+    
+    .iki {
+        display: none;
+    }
+    
+    .iki1 {
+        display: none;
+    }
+    
+    .hg1 {
+        display: block;
+    }
+
+.dffd{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+    .assaa{
+        display: none;
+    }
+
+
+.dollars h1{
+    color: #ff4605;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px;
+    line-height: 44px;
+}
+.dollars{
+    margin-top: 30px;   
+}
+.dollars p {
+    color: #A7A8A8;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.dollars span{
+    position: relative;
+    top: 3px;
+}
+.dollars p:hover{
+    color: #ff4605;
+}
+
+.mk{
+    display: flex;
+    justify-content: space-around;
+}
+.mmk{
+    display: flex;
+    justify-content: space-around;
+}
+
+.oxirkotta{
+    display: flex;
+    background-color: #eff3fa;
+    border-radius: 20px;
+}
+
+.maky{
+    background-color: #eff3fa;
+    display: flex;
+    width: 400px;
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 500px;
+    padding: 20px;
+}
+
+.buttonz{
+    display: block;
+}
+
+.byt{
+    width: 85%;
+    height: 50px;
+    font-size: 20px;
+    border: 1px solid #ff4605;
+    background-color: #fff !important;
+    color: #000;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.wat{
+    width: 85%;
+    height: 50px;
+    font-size: 20px;
+    background-color: #05cd51 !important;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.spend{
+    width: 85%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.byt:hover{
+    color: #ff4605;
+    background-color: #ff480530 !important;
+}
+.byt span{
+    color: #ff4605;
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+.wat span{
+    position: relative;
+    top: 3px;
+    right: 5px;
+}
+.maa{
+    width: 30%;
+}
+.maa p{
+    margin-top: 15px;
+    font-weight: 500;
+    font-size: 18px
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Mulish:wght@200&display=swap');
+
+*{
+    font-family: 'Mulish', sans-serif;
+}
+
+
+.bloksoz p{
+    line-height: 30px;
+    margin-top: 30px;
+}
+.bloksoz{
+    margin-top: 50px;
+}
+.bloksoz h4{
+    text-decoration: underline;
+    color: #ff4605;
+    cursor: pointer;
+}
