@@ -7,10 +7,14 @@ import { MdEmail } from "react-icons/md";
 import { FaFacebookF } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import Head from "next/head";
 
 export default function Contact() {
   return (
     <div>
+        <Head>
+        <title>BaraCar-Hompage</title>
+      </Head>
       <Navbar />
       <div className="contact">
         <div className="contact_left">

@@ -10,13 +10,19 @@ import Loginpage from './pages/js/Loginpage'
 
 
 
-
 export default function page() {
   return (
     <div>
+
       <Bmw8/>
       {/* <Home />
       <Footer /> */}
+
+
+      {/* <Login /> */}
+      <Home />
+      <Footer />
+
     </div>
   )
 }

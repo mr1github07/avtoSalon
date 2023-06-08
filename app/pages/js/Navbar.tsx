@@ -18,12 +18,12 @@ export default function Navbar () {
       >
         <MdClose className='close_btn' onClick={() => setCount(false)} />
         <div className='a_box'>
-          <a href='#' className='a_fff a_mobile'>
+          <a href='/' className='a_fff a_mobile'>
             Home
           </a>
         </div>
         <div className='a_box'>
-          <a href='#' className='a_fff a_mobile'>
+          <a href='/cars' className='a_fff a_mobile'>
             Search
           </a>
         </div>
@@ -48,14 +48,14 @@ export default function Navbar () {
         <a href='/' className='logo'>
           <Image src={logo} width={200} height={'auto'} alt='' />
         </a>
-        <a href='#' className='a_fff'>
+        <a href='/' className='a_fff'>
           Home
         </a>
-        <a href='#' className='a_fff'>
+        <a href='/cars' className='a_fff'>
           Search
         </a>
-        <a href='#' className='a_fff'>
-          Lising
+        <a href='/about' className='a_fff'>
+          About
         </a>
         <a href='#' className='a_fff'>
           Pages
@@ -67,11 +67,11 @@ export default function Navbar () {
       <div className='navbar_right'>
         <div className='loginIn'>
           <AiOutlineUser className='user_icon' />
-          <a href='' className='a_fff'>
+          <a href='/login' className='a_fff'>
             Login In
           </a>
-        </div>
-        <a href='#' className='a_fff'>
+        </div>  
+        <a href='/login' className='a_fff'>
           Register
         </a>
       </div>
