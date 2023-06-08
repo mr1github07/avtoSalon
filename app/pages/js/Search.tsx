@@ -31,27 +31,77 @@ export default function Search() {
   const [data1, setdata1] = React.useState([])
 
 
-
+  const handleMakeChange = (event) => {
+    setMake(event.target.value);
+    if (data1.length<1) {
+      axios.get(`${url}/api/cars_get/`).then(res => {   
+        const search = res.data.filter((item) => item.position.name.includes(event.target.value));
+        setdata1(search)
+        console.log(search,"pozitsya1");
+      }).catch(err => {
+        console.log(err, "salom");
+      })
+      console.log("chisto");   
+    }else{
+      const search = data1.filter((item) => item.position.name.includes(event.target.value));
+      setdata1(search)
+      console.log(search,"pozitsya2");
+    }
+  }
   const makeSearch = event => {
     setMake(event.target.value)
-    var data=[]
-    makes.map(item=>{
-    if(event.value==item.includes(position.name)){
-    data.push(item)
-    }
-    setMakes(data)
-    })
-    console.log(data,"salom");
-    
+    console.log(Make,'KKKKK');
   }
   const modelSearch = event => {
     setModel(event.target.value)
+
+    if (data1.length<1) {
+      axios.get(`${url}/api/cars_get/`).then(res => {   
+        const search = res.data.filter((item) => item.position.series.name.includes(event.target.value));
+        setdata1(search)
+        console.log(search,"model1");
+      }).catch(err => {
+        console.log(err, "salom");
+      })
+    }else{
+      const search = data1.filter((item) => item.position.series.name.includes(event.target.value));
+      setdata1(search)
+      console.log(search,"model2");
+    }
   }
   const distanceSearch = event => {
     setDistance(event.target.value)
+    if (data1.length<1) {
+      axios.get(`${url}/api/cars_get/`).then(res => {   
+        const search = res.data.filter((item) => item.position.series.model.name.includes(event.target.value));
+        setdata1(search)
+        console.log(search,"model1");
+      }).catch(err => {
+        console.log(err, "salom");
+      })
+    }else{
+      const search = data1.filter((item) => item.position.series.model.name.includes(event.target.value));
+      setdata1(search)
+      console.log(search,"model2");
+    }
   }
   const loacationSearch = event => {
     setlocation(event.target.value)
+    console.log("dddd");
+    
+    if (data1.length<1) {
+      axios.get(`${url}/api/cars_get/`).then(res => {   
+        const search = res.data.filter((item) => item.branch.name.includes(event.target.value));
+        setdata1(search)
+        console.log(search,"lacation1");
+      }).catch(err => {
+        console.log(err, "salom");
+      })
+    }else{
+      const search = data1.filter((item) => item.branch.name.includes(event.target.value));
+      setdata1(search)
+      console.log(search,"lacation2");
+    }
   }
   const TypeSearch = event => {
     setType(event.target.value)
@@ -79,8 +129,13 @@ export default function Search() {
 
 
   useEffect(() => {
-    axios.get(`${url}/api/cars_get/`).then(res => {
+    axios.get(`${url}/api/cars_get/`).then(res => {   
       setMakes(res.data)
+    }).catch(err => {
+      console.log(err, "salom");
+    })
+    axios.get(`${url}/api/cars_get/`).then(res => {   
+      setdata1(res.data)
     }).catch(err => {
       console.log(err, "salom");
     })
@@ -101,20 +156,19 @@ export default function Search() {
       <div className='search_top'>
         <div className='search_top_body'>
           <Box>
-            <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Position</InputLabel>
-              <Select
-                labelId='demo-simple-select-label'
-                id='demo-simple-select'
-                value={Make}
-                label='Make'
-                onChange={makeSearch}
-              >
-                {makes.map(item => {
-                  return <MenuItem value={item.position.name}>{item.position.name}</MenuItem>
-                })}
-              </Select>
-            </FormControl>
+          <FormControl className='inpsearch'>
+      <InputLabel id='demo-simple-select-label'>Position</InputLabel>
+      <Select
+        labelId='demo-simple-select-label'
+        id='demo-simple-select'
+        value={Make}
+        onChange={handleMakeChange}
+      >
+        {makes.map((item) => (
+          <MenuItem key={item.position.name} value={item.position.name}>{item.position.name}</MenuItem>
+        ))}
+      </Select>
+    </FormControl>
           </Box>
           <Box>
             <FormControl className='inpsearch'>
@@ -419,7 +473,7 @@ export default function Search() {
       </div>
       <div className='search_body'>
         <div className="body_top">
-          <h2>{makes.length} Results</h2>
+          <h2>{data1.length} Results</h2>
           <div className="top_box">
             <p>Sort by:</p>
             <Box className="inpsearch3">
@@ -445,7 +499,7 @@ export default function Search() {
 
             
         <div className="result_wrapper">
-          {makes.map((item,key) => {
+          {data1.map((item,key) => {
             return (
               <div key={key} className='feat_card2'>
                 <div>
