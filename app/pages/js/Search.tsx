@@ -17,7 +17,7 @@ import { isTemplateExpression } from 'typescript'
 
 
 export default function Search() {
-  const [Make, setMake] = React.useState('')
+  const [position, setPosition] = React.useState('')
   const [model, setModel] = React.useState('')
   const [Distance, setDistance] = React.useState('')
   const [location, setlocation] = React.useState('')
@@ -30,44 +30,66 @@ export default function Search() {
   const [images, setImages] = React.useState([])
   const [data1, setdata1] = React.useState([])
 
-
-
-  const makeSearch = event => {
-    setMake(event.target.value)
-    var data=[]
-    makes.map(item=>{
-    if(event.value==item.includes(position.name)){
-    data.push(item)
-    }
-    setMakes(data)
-    })
-    console.log(data,"salom");
-    
+  const handlePosition = (event) => {
+    setPosition(event.target.value);
+    const search = data1.filter((item) => item.position.name.includes(event.target.value));
+    setdata1(search)
   }
   const modelSearch = event => {
     setModel(event.target.value)
+    const search = data1.filter((item) => item.position.series.name.includes(event.target.value));
+    setdata1(search)
   }
   const distanceSearch = event => {
     setDistance(event.target.value)
+    const search = data1.filter((item) => item.position.series.model.name.includes(event.target.value));
+    setdata1(search)
   }
   const loacationSearch = event => {
     setlocation(event.target.value)
+    const search = data1.filter((item) =>item.branch.name.includes(event.target.value));
+    setdata1(search)
   }
   const TypeSearch = event => {
     setType(event.target.value)
+    const search = data1.filter((item) =>item.name.includes(event.target.value));
+    setdata1(search)
   }
+  const minChange = (event) => {
+  const search = data1.filter((item) =>item.price>event.target.value);
+    setdata1(search)
+
+  };
+  const maxChange = (event) => {
+if (event.target.value.length>=4) {
+  const search = data1.filter((item) =>item.price<event.target.value);
+  setdata1(search)
+  console.log(search,"dd");
+}
+    
+  };
   const MileageSearch = event => {
     setMileage(event.target.value)
+    const search = data1.filter((item) =>item.distance.includes(event.target.value));
+    setdata1(search)
   }
   const DriveSearch = event => {
     setDrive(event.target.value)
+    const search = data1.filter((item) =>item.gearbox.name.includes(event.target.value));
+    setdata1(search)
   }
   const FuelSearch = event => {
     setFuel(event.target.value)
+    const search = data1.filter((item) =>item.fuel_sort.name.includes(event.target.value));
+    setdata1(search)
   }
   const FeaturSearch = event => {
     setFeatur(event.target.value)
+    const search = data1.filter((item) =>item.year.includes(event.target.value));
+    setdata1(search)
   }
+
+
 
   const openModal2 = () => {
     document.querySelector('.mobile_search').classList.add('db')
@@ -75,12 +97,15 @@ export default function Search() {
   const closeModal2 = () => {
     document.querySelector('.mobile_search').classList.remove('db')
   }
-
-
-
   useEffect(() => {
-    axios.get(`${url}/api/cars_get/`).then(res => {
+    axios.get(`${url}/api/cars_get/`).then(res => {   
       setMakes(res.data)
+    }).catch(err => {
+      console.log(err, "salom");
+    })
+    
+    axios.get(`${url}/api/cars_get/`).then(res => {   
+      setdata1(res.data)
     }).catch(err => {
       console.log(err, "salom");
     })
@@ -92,29 +117,25 @@ export default function Search() {
       console.log(err, "salom");
     })
   }, [])
-
-
-
   return (
     <div>
       <Navbar />
       <div className='search_top'>
         <div className='search_top_body'>
           <Box>
-            <FormControl className='inpsearch'>
-              <InputLabel id='demo-simple-select-label'>Position</InputLabel>
-              <Select
-                labelId='demo-simple-select-label'
-                id='demo-simple-select'
-                value={Make}
-                label='Make'
-                onChange={makeSearch}
-              >
-                {makes.map(item => {
-                  return <MenuItem value={item.position.name}>{item.position.name}</MenuItem>
-                })}
-              </Select>
-            </FormControl>
+          <FormControl className='inpsearch'>
+      <InputLabel id='demo-simple-select-label'>Position</InputLabel>
+      <Select
+        labelId='demo-simple-select-label'
+        id='demo-simple-select'
+        value={position}
+        onChange={handlePosition}
+      >
+        {data1.map((item) => (
+          <MenuItem key={item.position.name} value={item.position.name}>{item.position.name}</MenuItem>
+        ))}
+      </Select>
+    </FormControl>
           </Box>
           <Box>
             <FormControl className='inpsearch'>
@@ -126,7 +147,7 @@ export default function Search() {
                 label='model'
                 onChange={modelSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.position.series.name}>{item.position.series.name}</MenuItem>
                 })}
               </Select>
@@ -142,7 +163,7 @@ export default function Search() {
                 label='Distance'
                 onChange={distanceSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.position.series.model.name}>{item.position.series.model.name}</MenuItem>
                 })}
               </Select>
@@ -158,7 +179,7 @@ export default function Search() {
                 label='location'
                 onChange={loacationSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.branch.name}>{item.branch.name}</MenuItem>
                 })}
               </Select>
@@ -174,7 +195,7 @@ export default function Search() {
                 label='Type'
                 onChange={TypeSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.name}>{item.name}</MenuItem>
                 })}
               </Select>
@@ -185,11 +206,14 @@ export default function Search() {
               type='text'
               className='searchInp priceInp1'
               placeholder='Min Price'
+              onChange={minChange}
+              
             />
             <input
               type='text'
               className='searchInp priceInp2'
               placeholder='Max Price'
+              onChange={maxChange}
             />
           </div>
           <Box>
@@ -202,7 +226,7 @@ export default function Search() {
                 label='Mileage'
                 onChange={MileageSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.distance}>{item.distance}</MenuItem>
                 })}
               </Select>
@@ -218,7 +242,7 @@ export default function Search() {
                 label='Drive'
                 onChange={DriveSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.gearbox.name}>{item.gearbox.name}</MenuItem>
                 })}
               </Select>
@@ -234,7 +258,7 @@ export default function Search() {
                 label='Fuel'
                 onChange={FuelSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.fuel_sort.name}>{item.fuel_sort.name}</MenuItem>
                 })}
               </Select>
@@ -250,7 +274,7 @@ export default function Search() {
                 label='Featur'
                 onChange={FeaturSearch}
               >
-                {makes.map(item => {
+                {data1.map(item => {
                   return <MenuItem value={item.year}>{item.year}</MenuItem>
                 })}
               </Select>
@@ -272,9 +296,9 @@ export default function Search() {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Make}
+                  value={position}
                   label='Make'
-                  onChange={makeSearch}
+                  onChange={handlePosition}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -419,7 +443,7 @@ export default function Search() {
       </div>
       <div className='search_body'>
         <div className="body_top">
-          <h2>{makes.length} Results</h2>
+          <h2>{data1.length} Results</h2>
           <div className="top_box">
             <p>Sort by:</p>
             <Box className="inpsearch3">
@@ -428,9 +452,9 @@ export default function Search() {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Make}
+                  value={position}
                   label='Make'
-                  onChange={makeSearch}
+                  onChange={handlePosition}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -440,12 +464,9 @@ export default function Search() {
             </Box>
 
           </div>
-        </div>
-        
-
-            
+        </div>        
         <div className="result_wrapper">
-          {makes.map((item,key) => {
+          {data1.map((item,key) => {
             return (
               <div key={key} className='feat_card2'>
                 <div>
