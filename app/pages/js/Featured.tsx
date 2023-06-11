@@ -224,32 +224,32 @@ export default function Featured() {
 
   const [price, setPrice] = React.useState([]);
 
-  useEffect(() => {
-    axios.get(`${url}/api/cars_get/`).then((res) => {
-      setCars(res.data);
-      // console.log(res.data, 'fgkhl;');
-      res.data.map((item) => {
-        var s = item.sale;
-        var p = item.price;
-        var sales = p - (p * s) / 100;
-        setPrice(sales);
-        //   res.data.map(item=>{
-        //     var s=item.sale
-        //     var p=item.price
-        //     var sales=p-(p*s/100)
-        //       setPrice(sales)
-        //   })
-      });
-    });
-    // var s = cars[0].sale
-    // var p = cars[0].price
-    // if (s == 0) {
-    //     setPrice(p)
-    // } else {
-    //     var f = p-(p*s/100)
-    //     setPrice(f)
-    // }
-  }, []);
+  // useEffect(() => {
+  //   axios.get(`${url}/api/cars_get/`).then((res) => {
+  //     setCars(res.data);
+  //     // console.log(res.data, 'fgkhl;');
+  //     res.data.map((item) => {
+  //       var s = item.sale;
+  //       var p = item.price;
+  //       var sales = p - (p * s) / 100;
+  //       setPrice(sales);
+  //       //   res.data.map(item=>{
+  //       //     var s=item.sale
+  //       //     var p=item.price
+  //       //     var sales=p-(p*s/100)
+  //       //       setPrice(sales)
+  //       //   })
+  //     });
+  //   });
+  //   // var s = cars[0].sale
+  //   // var p = cars[0].price
+  //   // if (s == 0) {
+  //   //     setPrice(p)
+  //   // } else {
+  //   //     var f = p-(p*s/100)
+  //   //     setPrice(f)
+  //   // }
+  // }, []);
 
   return (
     <div className="featured">
