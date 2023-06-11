@@ -17,77 +17,77 @@ import { isTemplateExpression } from 'typescript'
 
 
 export default function Search() {
-  const [position, setPosition] = React.useState('')
-  const [model, setModel] = React.useState('')
-  const [Distance, setDistance] = React.useState('')
-  const [location, setlocation] = React.useState('')
-  const [Type, setType] = React.useState('')
-  const [Mileage, setMileage] = React.useState('')
-  const [Drive, setDrive] = React.useState('')
-  const [Fuel, setFuel] = React.useState('')
-  const [Featur, setFeatur] = React.useState('')
+  // const [position, setPosition] = React.useState('')
+  // const [model, setModel] = React.useState('')
+  // const [Distance, setDistance] = React.useState('')
+  // const [location, setlocation] = React.useState('')
+  // const [Type, setType] = React.useState('')
+  // const [Mileage, setMileage] = React.useState('')
+  // const [Drive, setDrive] = React.useState('')
+  // const [Fuel, setFuel] = React.useState('')
+  // const [Featur, setFeatur] = React.useState('')
   const [makes, setMakes] = React.useState([])
   const [images, setImages] = React.useState([])
-  const [data1, setdata1] = React.useState([])
+  // const [data1, setdata1] = React.useState([])
 
-  const handlePosition = (event) => {
-    setPosition(event.target.value);
-    const search = data1.filter((item) => item.position.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const modelSearch = event => {
-    setModel(event.target.value)
-    const search = data1.filter((item) => item.position.series.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const distanceSearch = event => {
-    setDistance(event.target.value)
-    const search = data1.filter((item) => item.position.series.model.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const loacationSearch = event => {
-    setlocation(event.target.value)
-    const search = data1.filter((item) =>item.branch.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const TypeSearch = event => {
-    setType(event.target.value)
-    const search = data1.filter((item) =>item.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const minChange = (event) => {
-  const search = data1.filter((item) =>item.price>event.target.value);
-    setdata1(search)
+//   const handlePosition = (event) => {
+//     setPosition(event.target.value);
+//     const search = data1.filter((item) => item.position.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const modelSearch = event => {
+//     setModel(event.target.value)
+//     const search = data1.filter((item) => item.position.series.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const distanceSearch = event => {
+//     setDistance(event.target.value)
+//     const search = data1.filter((item) => item.position.series.model.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const loacationSearch = event => {
+//     setlocation(event.target.value)
+//     const search = data1.filter((item) =>item.branch.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const TypeSearch = event => {
+//     setType(event.target.value)
+//     const search = data1.filter((item) =>item.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const minChange = (event) => {
+//   const search = data1.filter((item) =>item.price>event.target.value);
+//     setdata1(search)
 
-  };
-  const maxChange = (event) => {
-if (event.target.value.length>=4) {
-  const search = data1.filter((item) =>item.price<event.target.value);
-  setdata1(search)
-  console.log(search,"dd");
-}
+//   };
+//   const maxChange = (event) => {
+// if (event.target.value.length>=4) {
+//   const search = data1.filter((item) =>item.price<event.target.value);
+//   setdata1(search)
+//   console.log(search,"dd");
+// }
     
-  };
-  const MileageSearch = event => {
-    setMileage(event.target.value)
-    const search = data1.filter((item) =>item.distance.includes(event.target.value));
-    setdata1(search)
-  }
-  const DriveSearch = event => {
-    setDrive(event.target.value)
-    const search = data1.filter((item) =>item.gearbox.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const FuelSearch = event => {
-    setFuel(event.target.value)
-    const search = data1.filter((item) =>item.fuel_sort.name.includes(event.target.value));
-    setdata1(search)
-  }
-  const FeaturSearch = event => {
-    setFeatur(event.target.value)
-    const search = data1.filter((item) =>item.year.includes(event.target.value));
-    setdata1(search)
-  }
+//   };
+//   const MileageSearch = event => {
+//     setMileage(event.target.value)
+//     const search = data1.filter((item) =>item.distance.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const DriveSearch = event => {
+//     setDrive(event.target.value)
+//     const search = data1.filter((item) =>item.gearbox.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const FuelSearch = event => {
+//     setFuel(event.target.value)
+//     const search = data1.filter((item) =>item.fuel_sort.name.includes(event.target.value));
+//     setdata1(search)
+//   }
+//   const FeaturSearch = event => {
+//     setFeatur(event.target.value)
+//     const search = data1.filter((item) =>item.year.includes(event.target.value));
+//     setdata1(search)
+//   }
 
 
 
@@ -104,11 +104,11 @@ if (event.target.value.length>=4) {
       console.log(err, "salom");
     })
     
-    axios.get(`${url}/api/cars_get/`).then(res => {   
-      setdata1(res.data)
-    }).catch(err => {
-      console.log(err, "salom");
-    })
+    // axios.get(`${url}/api/cars_get/`).then(res => {   
+    //   setdata1(res.data)
+    // }).catch(err => {
+    //   console.log(err, "salom");
+    // })
   }, [])
   useEffect(() => {
     axios.get(`${url}/api/images/`).then(res => {
@@ -128,12 +128,12 @@ if (event.target.value.length>=4) {
       <Select
         labelId='demo-simple-select-label'
         id='demo-simple-select'
-        value={position}
-        onChange={handlePosition}
+        // value={position}
+        // onChange={handlePosition}
       >
-        {data1.map((item) => (
+        {/* {data1.map((item) => (
           <MenuItem key={item.position.name} value={item.position.name}>{item.position.name}</MenuItem>
-        ))}
+        ))} */}
       </Select>
     </FormControl>
           </Box>
@@ -143,13 +143,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={model}
-                label='model'
-                onChange={modelSearch}
+                // value={model}
+                // label='model'
+                // onChange={modelSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.position.series.name}>{item.position.series.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -159,13 +159,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Distance}
-                label='Distance'
-                onChange={distanceSearch}
+                // value={Distance}
+                // label='Distance'
+                // onChange={distanceSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.position.series.model.name}>{item.position.series.model.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -175,13 +175,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={location}
-                label='location'
-                onChange={loacationSearch}
+                // value={location}
+                // label='location'
+                // onChange={loacationSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.branch.name}>{item.branch.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -191,13 +191,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Type}
-                label='Type'
-                onChange={TypeSearch}
+                // value={Type}
+                // label='Type'
+                // onChange={TypeSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.name}>{item.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -206,14 +206,14 @@ if (event.target.value.length>=4) {
               type='text'
               className='searchInp priceInp1'
               placeholder='Min Price'
-              onChange={minChange}
+              // onChange={minChange}
               
             />
             <input
               type='text'
               className='searchInp priceInp2'
               placeholder='Max Price'
-              onChange={maxChange}
+              // onChange={maxChange}
             />
           </div>
           <Box>
@@ -222,13 +222,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Mileage}
-                label='Mileage'
-                onChange={MileageSearch}
+                // value={Mileage}
+                // label='Mileage'
+                // onChange={MileageSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.distance}>{item.distance}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -238,13 +238,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Drive}
-                label='Drive'
-                onChange={DriveSearch}
+                // value={Drive}
+                // label='Drive'
+                // onChange={DriveSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.gearbox.name}>{item.gearbox.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -254,13 +254,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Fuel}
-                label='Fuel'
-                onChange={FuelSearch}
+                // value={Fuel}
+                // label='Fuel'
+                // onChange={FuelSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.fuel_sort.name}>{item.fuel_sort.name}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -270,13 +270,13 @@ if (event.target.value.length>=4) {
               <Select
                 labelId='demo-simple-select-label'
                 id='demo-simple-select'
-                value={Featur}
-                label='Featur'
-                onChange={FeaturSearch}
+                // value={Featur}
+                // label='Featur'
+                // onChange={FeaturSearch}
               >
-                {data1.map(item => {
+                {/* {data1.map(item => {
                   return <MenuItem value={item.year}>{item.year}</MenuItem>
-                })}
+                })} */}
               </Select>
             </FormControl>
           </Box>
@@ -296,9 +296,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={position}
-                  label='Make'
-                  onChange={handlePosition}
+                  // value={position}
+                  // label='Make'
+                  // onChange={handlePosition}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -312,9 +312,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={model}
-                  label='model'
-                  onChange={modelSearch}
+                  // value={model}
+                  // label='model'
+                  // onChange={modelSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -333,9 +333,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Distance}
-                  label='Distance'
-                  onChange={distanceSearch}
+                  // value={Distance}
+                  // label='Distance'
+                  // onChange={distanceSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -349,9 +349,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Type}
-                  label='Type'
-                  onChange={TypeSearch}
+                  // value={Type}
+                  // label='Type'
+                  // onChange={TypeSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -377,9 +377,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Mileage}
-                  label='Mileage'
-                  onChange={MileageSearch}
+                  // value={Mileage}
+                  // label='Mileage'
+                  // onChange={MileageSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -395,9 +395,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Drive}
-                  label='Drive'
-                  onChange={DriveSearch}
+                  // value={Drive}
+                  // label='Drive'
+                  // onChange={DriveSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -411,9 +411,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Fuel}
-                  label='Fuel'
-                  onChange={FuelSearch}
+                  // value={Fuel}
+                  // label='Fuel'
+                  // onChange={FuelSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -427,9 +427,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={Featur}
-                  label='Featur'
-                  onChange={FeaturSearch}
+                  // value={Featur}
+                  // label='Featur'
+                  // onChange={FeaturSearch}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -443,7 +443,7 @@ if (event.target.value.length>=4) {
       </div>
       <div className='search_body'>
         <div className="body_top">
-          <h2>{data1.length} Results</h2>
+          <h2> Results</h2>
           <div className="top_box">
             <p>Sort by:</p>
             <Box className="inpsearch3">
@@ -452,9 +452,9 @@ if (event.target.value.length>=4) {
                 <Select
                   labelId='demo-simple-select-label'
                   id='demo-simple-select'
-                  value={position}
-                  label='Make'
-                  onChange={handlePosition}
+                  // value={position}
+                  // label='Make'
+                  // onChange={handlePosition}
                 >
                   {makes.map(item => {
                     return <MenuItem value={item.name}>{item.name}</MenuItem>
@@ -466,7 +466,7 @@ if (event.target.value.length>=4) {
           </div>
         </div>        
         <div className="result_wrapper">
-          {data1.map((item,key) => {
+          {makes.map((item,key) => {
             return (
               <div key={key} className='feat_card2'>
                 <div>
