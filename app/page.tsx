@@ -14,7 +14,7 @@ export default function page() {
   return (
     <div>
 
-      <Bmw8/>
+      {/* <Bmw8/> */}
       {/* <Home />
       <Footer /> */}
 
