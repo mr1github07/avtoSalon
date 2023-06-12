@@ -201,7 +201,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Featured />
+      {/* <Featured /> */}
       <Popular />
       <div className="kotta">
         <h1>Why choose us?</h1>

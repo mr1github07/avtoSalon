@@ -1,8 +1,8 @@
-.swiper {
+.swip .swiper {
     width: 100%;
     margin-top: 20px;
 }
-.swiper-slide {
+.swip .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
@@ -11,33 +11,34 @@
     align-items: center;
 }
 
-.swiper-slide {
+.swip .swiper-slide {
     background-size: cover;
     background-position: center;
 }
 
-.mySwiper2 {
+.swip .mySwiper2 {
     height: 80%;
     width: 100%;
+    border-radius: 12px;
 }
 
-.mySwiper {
+.swip .mySwiper {
     height: 20%;
     box-sizing: border-box;
     padding: 10px 0;
 }
 
-.mySwiper .swiper-slide {
+.swip .mySwiper .swiper-slide {
     width: 25%;
     height: 100%;
     opacity: 0.4;
 }
 
-.mySwiper .swiper-slide-thumb-active {
+.swip .mySwiper .swiper-slide-thumb-active {
     opacity: 1;
 }
 
-.swiper-slide img {
+.swip .swiper-slide img {
     display: block;
     width: 100%; 
     object-fit: cover;
@@ -48,17 +49,17 @@
 
 .simg{
     height: 15vh !important;
-    border-radius: 20px;
+    border-radius: 12px;
 }
 
-.mySwiper .swiper-slide{
+.swip .mySwiper .swiper-slide{
     width:20% !important;
 }
 
 .s2img{
     width: 100% !important;
-    height: 100% !important;
-    border-radius: 35px !important;
+    /* height: 100% !important; */
+    border-radius: 12px !important;
 }
 
 .swip{
@@ -68,32 +69,32 @@
 }
 
 .dfc{
-    width: 60%;
-}
+    width: 700px;
+} 
 
-.swiper-button-next::after, .swiper-button-prev::after{
+.swip .swiper-button-next::after, .swiper-button-prev::after{
     display: none;
 }
-.swiper-button-next{
+.swip .swiper-button-next{
     width: 50px;
     height: 50px;
     background: white !important;
     border-radius: 50%;
     border: 5px solid white;
-    background: url("https://static.thenounproject.com/png/1076470-200.png") !important;
+        background: #ffffff00 !important;
     background-size: 10px;
     background-repeat: no-repeat;
     box-shadow: 0px 0px 10px black !important;
     margin-right: 100%;
     transition: .5s;
 }
-.swiper-button-prev{
+.swip .swiper-button-prev{
     width: 50px;
     height: 50px;
     background: white !important;
     border-radius: 50%;
     border: 5px solid white;
-    background: url("https://static.thenounproject.com/png/1076470-200.png") !important;
+    background: #ffffff00 !important;
     box-shadow: 0px 0px 10px black !important;
     background-size: cover;
     background-repeat: no-repeat;
@@ -107,8 +108,8 @@ margin-left: 0%;
     margin-right: 0%;
 }
 .ypn{
-    width: 40%;
-    margin-left: 10%;
+    /* width: 40%; */
+    margin-left: 5%;
 }
 .ypn hr{
     margin-top: 30px;
@@ -181,6 +182,21 @@ margin-left: 0%;
         .dfc{
             display: block;
         }
+        .vaa{
+            margin-left: 20% !important;
+        }
+        .oxirkotta{
+            display: flex !important;
+            justify-content: space-around;
+            padding: 20px;
+            flex-wrap: wrap;
+
+        }
+        .oxirkotta .maky{
+            display: flex;
+            justify-content: space-between;
+            padding-top: 0px;
+        }
         .hf{
             display: none;
         }
@@ -221,6 +237,44 @@ margin-left: 0%;
                 width: 90%;
                 margin-left: 5%;
             }
+            .maky{
+                width: 50%;
+                padding: 20px;
+            }
+            .buttonz1{
+                width: 50%;
+            }
+            .maky1{
+                width: 50%;
+            }
+    }
+@media(max-width:1047px){
+    .oxirkotta{
+        display: flex !important;
+        justify-content: flex-start !important;
+        padding: 20px;
+        flex-wrap: wrap;
+
+    } .oxirkotta button{
+        margin-left: 0px;
+        width: 100%;
+    }
+}
+
+.pas p{
+    color: #222732;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+    @media (max-width:1050px) {
+        .oxirkotta button{
+            width: 100%;
+        }
+        .oxirkotta {
+            background-color: #fff;
+        }
     }
     .lll {
         list-style: none;
@@ -240,8 +294,10 @@ margin-left: 0%;
 
 .dffd{
     display: flex;
-    width: 80%;
-    margin-left: 10%;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    
 }
 
 
@@ -286,23 +342,39 @@ margin-left: 0%;
     background-color: #eff3fa;
     border-radius: 20px;
 }
-
+.oxirkotta{
+    display: none;
+}
 .maky{
     background-color: #eff3fa;
     display: flex;
-    width: 400px;
+    justify-content: space-around;
+    border-radius: 20px;
+    
+}
+.maky1{
+    background-color: #eff3fa;
+    display: flex;
+    justify-content: space-around;
     margin-top: 20px;
     border-radius: 20px;
-    height: 500px;
-    padding: 20px;
+    padding-bottom: 20px;
+    padding-top: 30px;
+    width: 80%;
 }
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto+Slab&display=swap');
 
+
+*{
+    font-family: 'Mulish', sans-serif !important;
+font-family: 'Roboto Slab', serif !important;
+}
 .buttonz{
     display: block;
 }
 
 .byt{
-    width: 85%;
+    width: 100%;
     height: 50px;
     font-size: 20px;
     border: 1px solid #ff4605;
@@ -312,7 +384,7 @@ margin-left: 0%;
     margin-top: 20px;
 }
 .wat{
-    width: 85%;
+    width: 100%;
     height: 50px;
     font-size: 20px;
     background-color: #05cd51 !important;
@@ -320,7 +392,7 @@ margin-left: 0%;
     margin-top: 20px;
 }
 .spend{
-    width: 85%;
+    width: 100%;
     height: 50px;
     font-size: 20px;
     border-radius: 10px;
@@ -343,25 +415,34 @@ margin-left: 0%;
     right: 5px;
 }
 .maa{
-    width: 30%;
+    width: 50%;
+    font-weight: 600;
 }
 .maa p{
-    margin-top: 15px;
-    font-weight: 500;
-    font-size: 18px
+    /* font-weight: 700; */
+    margin: 0px 0px 12px 0px;
+    /* margin-top: 15px; */
+    /* font-weight: 500; */
+    font-size: 18px;
+    width: 300px;
 }
-
+.mn p{
+    margin: 0px 0px 15.5px 0px;
+    color: grey;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Mulish:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&family=Roboto+Slab&display=swap');
 
-*{
+/* *{
     font-family: 'Mulish', sans-serif;
-}
+} */
 
 
 .bloksoz p{
     line-height: 30px;
     margin-top: 30px;
+    font-family: 'Mulish', sans-serif !important;
 }
 .bloksoz{
     margin-top: 50px;
@@ -370,4 +451,309 @@ margin-left: 0%;
     text-decoration: underline;
     color: #ff4605;
     cursor: pointer;
+}
+
+@media (max-width:600px) {
+    .mySwiper{
+        display: none !important;
+    }
+    
+}
+
+/* @media (max-width:1000px) {
+    .maky{
+              width: 100%;
+                  padding: 50px;
+    }
+    .oxirkotta {
+                background-color: #fff;
+    }
+        .buttonz1{
+                   width: 100%;
+        }
+} */
+.buttonz1{
+    display: block;
+}
+@media (max-width:600px) {
+    .maky1{
+             width: 100%;
+    }
+}
+@media (max-width:400px) {
+    .mn p{
+        font-size: 15px;
+    }
+    .maa p{
+        font-size: 18px;
+    }
+    .dffd{
+        padding: 10px;
+    }
+    .oxirkotta{
+        padding: 0px !important;
+    }
+    .maky{
+        padding: 10px !important;
+    }
+}
+.card122{
+    /* width: 80%; */
+    display: flex;
+    justify-content: space-around;
+}
+.laaa h2{
+        color: #222732;
+    font-size: 25px;
+    font-weight: 900 !important;
+    line-height: 28px;
+}
+.koka1{
+    width: 100%;
+    background-color: #eff3fa;
+    margin-top: 30px;
+}
+.vaa h2{
+    color: #222732;
+    font-size: 16px;
+    line-height: 27px;
+    max-width: 260px;
+}
+.vaa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 50px;
+}
+.laaa button{
+    width: 170px;
+    height: 50px;
+    background-color: white;
+    border: 1px solid #ff4605;
+    border-radius: 10px;
+    color: #ff4605;
+    font-size: 16px;
+    margin-top: 20px;
+}
+*{
+    box-sizing: border-box;
+}
+.laaa{
+    padding-left: 20px;
+    padding-top: 40px;
+}
+.mnb{
+    margin-top: 20px;
+}
+.but1{
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    border-radius: 7px;
+}
+.but2{
+    width: 220px;
+    height: 50px;
+    background-color: white;
+    border-radius: 7px;
+}
+.but3{
+    width: 180px;
+    height: 50px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.but4{
+    width: 250px;
+    height: 50px;
+    background-color: white;
+    border-radius: 7px;
+}
+.but5{
+    width: 220px;
+    height: 50px;
+    background-color: white;
+    border-radius: 7px;
+}
+.butt button{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.butt{
+    padding-top: 30px;
+    margin-left: 30px;
+    padding-right: 30px;
+}
+@media(max-width:1200px){
+    .butt{
+        display: flex !important;
+
+    }
+    .lkj{
+        display: flex;flex-wrap: wrap;
+    }
+}
+.maa1{
+    margin: auto;
+    margin-right: 0px;
+}
+@media(max-width:900px){
+    .vaa{
+        display: none;
+    }
+    .maa1{
+        display: none;
+    }
+    .card122{
+        padding-bottom: 30px;
+    }
+    .nm{
+        display: flex !important;
+        font-size: 16px !important;
+        margin-left: -20px;
+    }
+    .mnb{
+        display: none;
+    }
+    
+    .bv{
+        display: block !important;
+    }
+}
+@media(max-width:650px){
+    .lkj{
+        display: block !important;
+        width: 100%;
+    }.butt button{
+        width: 100% !important;
+    }
+    .butt{
+        padding-top: 0px;
+        margin-left: 0px;
+        padding: 30px;
+    }
+    .butt button{
+        margin-left: 0px;
+        margin-top: 10px;
+    }
+}
+.nm{
+    display: none;
+}
+.lkjh h1{
+    margin-top: 30px;
+}
+.iframe{
+    width: 100% !important;
+    height: 70vh;
+}
+.dumalo{
+    width: 12px;
+    height: 12px;
+    background-color: #ff4605;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+.dum{
+    display: flex;
+    
+}
+.bv{
+    display: flex;
+}
+.dum h2{
+    padding-left: 15px;
+    font-size: 17px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    float: left;
+    color: #222732;
+    width: 190px;
+}
+#vc{
+    margin-top: 30px;
+}
+.kjl{
+    background-color: #eff3fa;
+}
+
+.bnm{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    padding-top: 15px;
+
+}
+.mnbc{
+    display: flex;
+    justify-content: center;
+}
+.carf{
+    width: 450px;
+    border-radius: 20px;
+    background-color: red;
+    padding-top: 20px;
+}
+
+.inps1 input{
+    min-height: 53px;
+    border-radius: 10px;
+    width: 30%;
+    padding: 10px 27px;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    box-shadow: 1px 1px 0 0 rgba(196, 196, 196, 0.24);
+    border: 1px solid #e7edf3;
+}
+.inp2{
+    display: flex;
+    justify-content: space-around;
+}
+.texta{
+    width: 97%;
+    margin-left: 10px;
+    min-height: 53px;
+    border-radius: 10px;
+    padding: 10px 27px;
+    font-size: 14px;
+    line-height: 16px;
+    box-shadow: 1px 1px 0 0 rgba(196, 196, 196, 0.24);
+    border: 1px solid #e7edf3;
+    margin-top: 20px;
+}
+*{
+    outline: none;
+}
+.inps1 button{
+    width: 120px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 12px;
+    /* margin-left: 80%; */
+    background-color: #ff4605;
+}
+.buy{
+    display: flex;justify-content: flex-end;
+    margin-right: 10px;
+    margin-top: 20px;
+    padding-bottom: 30px;
+}
+.carf1{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    border-radius: 20px;
+}
+.carf1 img{
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+}
+.asda{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
 }
