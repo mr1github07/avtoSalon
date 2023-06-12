@@ -117,6 +117,13 @@ export default function Search() {
       console.log(err, "salom");
     })
   }, [])
+
+
+
+function getData(key){
+console.log(key);
+localStorage.setItem("oneproduct",JSON.stringify(key))
+}
   return (
     <div>
       <Navbar />
@@ -468,7 +475,7 @@ export default function Search() {
         <div className="result_wrapper">
           {makes.map((item,key) => {
             return (
-              <div key={key} className='feat_card2'>
+              <div key={key} onClick={()=>getData(item)} className='feat_card2'>
                 <div>
                   <h1 className="salesale">-{(item).sale}%</h1>
                   <Image src={car} alt='a' className='featured_img' />
