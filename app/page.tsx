@@ -9,8 +9,6 @@ import Bmw8 from './pages/js/Bmw8'
 import Loginpage from './pages/js/Loginpage'
 import Featured from './pages/js/Featured'
 
-
-
 export default function page() {
   return (
     <div>
