@@ -14,13 +14,9 @@ import Featured from './pages/js/Featured'
 export default function page() {
   return (
     <div>
-
-      <Bmw8/>
-       <Home />
-      {/* <Footer />  */}
-      {/* <Featured/> */}
-
-
+      {/* <Bmw8/> */}
+      {/* <Home />
+      <Footer /> */}
       {/* <Login /> */}
       {/* <Home />
       <Footer /> */}

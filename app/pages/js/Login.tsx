@@ -16,6 +16,7 @@ import url from "./Host";
 export default function Login() {
   const page = 1;
   const [data, setData] = React.useState(1);
+  const [ staff, setStaff ] = React.useState()
 
   const plus = () => {
     setData(data + 1);
@@ -25,15 +26,27 @@ export default function Login() {
       setData(data - 1);
     }
   };
-  useEffect(() => {
-    axios
-      .get(`${url}/auth/users/`, {
-        headers: { Authorization: "Bearer " + sessionStorage.getItem("token") },
-      })
-      .then((res) => {
-        console.log(res.data, "onnlkml;kpll;lmml;l;mlnml");
-      });
-  }, []);
+function agerr(id) {
+  setStaff(id)
+}
+  function postUser() {
+console.log(staff);
+
+    
+
+    var data = new FormData()
+    data.append('username', document.querySelector('.Username').value)
+    data.append('phone',  document.querySelector('.Phone').value)
+    data.append('password',  document.querySelector('.Password').value)
+    data.append('is_staff',  false)
+    axios.post(`${url}/auth/register/`, data).then(res => {
+      alert('success');
+      window.location = '/login'
+    }).catch(err => {
+      alert(err)
+    })
+
+  }
 
   return (
     <div>
@@ -77,10 +90,10 @@ export default function Login() {
                   <input type="password" placeholder="Password" />
                 </div>
                 <div className="checkbox">
-                  <div className="check2">
+                  {/* <div className="check2">
                     <input id="cb1" type="checkbox" />
                     <p>Remember</p>
-                  </div>
+                  </div> */}
                   <a className="forgot" href="#">
                     Forgotten password?
                   </a>
@@ -92,22 +105,22 @@ export default function Login() {
                 <h2>Register</h2>
                 <h3>Create new account today.</h3>
                 <div className="inputs">
-                  <input type="text" placeholder="Username*" />
-                  <input type="text" placeholder="Email*" />
-                  <input type="text" placeholder="Phone*" />
-                  <input type="password" placeholder="Password*" />
-                  <div className="checkbox1">
+                  <input type="text" className="Username" placeholder="Username*" />
+                  {/* <input type="text" className="Email" placeholder="Email*" /> */}
+                  <input type="text" className="Phone" placeholder="Phone*" />
+                  <input type="password" className="Password" placeholder="Password*" />
+                  {/* <div className="checkbox1">
                     <div className="check">
-                      <input id="cb1" type="radio" name="radio" />
+                      <input onClick={() => agerr(false)}  id="cb1" type="radio" className="radio" name="radio" />
                       <p>Private seller</p>
                     </div>
                     <div className="check">
-                      <input id="cb1" type="radio" name="radio" />
+                      <input onClick={() => agerr(true)} id="cb1" className="radio2" type="radio" name="radio" />
                       <p>Business seller</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="checkbox1">
+                {/* <div className="checkbox1">
                   <div className="check2">
                     <input id="cb1" type="checkbox" />
                     <p>I accept the</p>
@@ -115,14 +128,14 @@ export default function Login() {
                   <a className="privacy" href="#">
                     privacy policy
                   </a>
-                </div>
-                <button>Register</button>
+                </div> */}
+                <button onClick={() => postUser()}>Register</button>
               </div>
             )}
           </div>
         </div>
       </center>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
